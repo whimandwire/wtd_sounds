@@ -1,0 +1,571 @@
+Type,Sound File Name,Text to Paste,Category,Vibe / Keywords,Speaker Details
+In-Game,,(Air Horn),SFX & UI,"Hype, Loud, Alert, DJ",N/A
+In-Game,,(Alert),SFX & UI,"Alarm, Attention, Danger",N/A
+In-Game,,(Baby Cries),Human Vocals,"Sad, Annoying, Whining",Baby
+In-Game,,(Beep),SFX & UI,"System, Electronic, Short",N/A
+In-Game,,(Bell),SFX & UI,"Chime, Ring, Ding",N/A
+In-Game,,(Bite),SFX & UI,"Crunch, Eating, Chomp",N/A
+In-Game,,(Bloop),SFX & UI,"Bubble, UI, Cartoon",N/A
+In-Game,,(Boing),SFX & UI,"Spring, Jump, Cartoon, Funny",N/A
+In-Game,,(Bomb Dropping),SFX & UI,"Danger, Falling, Explosion",N/A
+In-Game,,(Bruh),Internet & Memes,"Disbelief, Exhausted, Disappointment",Male
+In-Game,,(Burp),Human Vocals,"Gross, Disgusting, Rude",
+In-Game,,(Buzzer),SFX & UI,"Wrong, Fail, Time Out",N/A
+In-Game,,(Car Horn),SFX & UI,"Traffic, Angry, Alert",N/A
+In-Game,,(Cartoon Bong),SFX & UI,"Hit, Bonk, Goofy, Comedy",N/A
+In-Game,,(Cartoon Fall),SFX & UI,"Whistle, Drop, Descending",N/A
+In-Game,,(Cartoon Laugh),Human Vocals,"Goofy, Giggle, Funny, Retro",
+In-Game,,(Cartoon Run),SFX & UI,"Fast, Scramble, Slipping, Feet",N/A
+In-Game,,(Cartoon Slip),SFX & UI,"Trip, Fall, Slide",N/A
+In-Game,,(Cartoon Squirt),SFX & UI,"Splash, Liquid, Slime",N/A
+In-Game,,(Cat),SFX & UI,"Meow, Animal, Pet",N/A
+In-Game,,(Censored),SFX & UI,"Bleep, Profanity, TV",N/A
+In-Game,,(Chainsaw),SFX & UI,"Horror, Engine, Weapon, Loud",N/A
+In-Game,,(Clapping),Crowd & Atmosphere,"Applause, Approval, Good Job",Crowd
+In-Game,,(Clock),SFX & UI,"Ticking, Time, Tension, Waiting",N/A
+In-Game,,(Crickets),Crowd & Atmosphere,"Silence, Awkward, Unfunny, Bombing",N/A
+In-Game,,(Crowd Excited),Crowd & Atmosphere,"Hype, Cheering, Celebration",Crowd
+In-Game,,(Crowd Laughing),Crowd & Atmosphere,"Comedy, Chuckle, Giggle, Sitcom",Crowd
+In-Game,,(Dance Music),Music Cues,"Club, Party, Electronic, Beat",N/A
+In-Game,,(Dog),SFX & UI,"Bark, Animal, Pet",N/A
+In-Game,,(Dramatic),Music Cues,"Sting, Shocked, Suspense, Reveal",N/A
+In-Game,,(Drum Roll),SFX & UI,"Anticipation, Waiting, Intro",N/A
+In-Game,,(Explosion),SFX & UI,"Boom, Loud, Danger, Destruction",N/A
+In-Game,,(Fart Reverb),SFX & UI,"Gross, Funny, Echo, Loud, Bass",N/A
+In-Game,,(Fart),SFX & UI,"Gross, Funny, Classic",N/A
+In-Game,,(Female Crying),Human Vocals,"Sad, Emotional, Sobbing",Female
+In-Game,,(Female Gasp),Human Vocals,"Shocked, Surprised, Inhale",Female
+In-Game,,(Female Scream),Human Vocals,"Panic, Scared, Horror, Loud",Female
+In-Game,,(Finish Him),Pop Culture & Media,"Mortal Kombat, Fighting, Ultimate, Win",Male
+In-Game,,(Fish Gag),SFX & UI,"Choking, Gross, Vomit",N/A
+In-Game,,(Foghorn Music),Music Cues,"Loud, Deep, Boat, Warning",N/A
+In-Game,,(Game Over),Pop Culture & Media,"Arcade, Fail, Lose, Retro",N/A
+In-Game,,(Glass Breaking),SFX & UI,"Smash, Crash, Damage",N/A
+In-Game,,(Gun Burst),SFX & UI,"Shooting, Firearm, Action, Rapid",N/A
+In-Game,,(Gun Cocking),SFX & UI,"Threat, Loading, Weapon, Action",N/A
+In-Game,,(Gun Ricochet),SFX & UI,"Bullet, Ping, Action, Western",N/A
+In-Game,,(Gun Shot),SFX & UI,"Firearm, Bang, Weapon, Action",N/A
+In-Game,,(Jazz Bass),Music Cues,"Smooth, Walking, Seinfeld Vibe, Cool",N/A
+In-Game,,(Kiss),Human Vocals,"Romance, Love, Smooch",
+In-Game,,(Laser),SFX & UI,"Sci-Fi, Pew Pew, Retro, Space",N/A
+In-Game,,(Liquid Pouring),SFX & UI,"Drink, Water, Splash",N/A
+In-Game,,(Machine Gun),SFX & UI,"Rapid, Shooting, Firearm, Warfare",N/A
+In-Game,,(Male Crying),Human Vocals,"Sad, Whining, Sobbing, Emotional",Male
+In-Game,,(Male Gasp),Human Vocals,"Shocked, Surprised, Inhale",Male
+In-Game,,(Male Scream),Human Vocals,"Panic, Loud, Terror, Scared",Male
+In-Game,,(More You Know),Pop Culture & Media,"Educational, Meme, PSA, Star, Bright",N/A
+In-Game,,(Noisemaker),SFX & UI,"Party, Celebration, New Years, Kazoo",N/A
+In-Game,,(Peel Out),SFX & UI,"Car, Speed, Fast, Escape",N/A
+In-Game,,(Phone),SFX & UI,"Ringing, Call, Retro, Landline",N/A
+In-Game,,(Punch),SFX & UI,"Hit, Fight, Slap, Impact",N/A
+In-Game,,(Ready Fight),Pop Culture & Media,"Arcade, Fighting, Mortal Kombat, Game",Male
+In-Game,,(Record),SFX & UI,"Scratch, Pause, Awkward, Freeze Frame",N/A
+In-Game,,(Rim Shot),SFX & UI,"Ba-Dum-Tish, Joke, Comedy, Unfunny",N/A
+In-Game,,(Robotic Noise),SFX & UI,"Sci-Fi, Computer, Beep, Tech",N/A
+In-Game,,(Sad Trombone),Music Cues,"Wah Wah Wah, Fail, Loser, Disappointment",N/A
+In-Game,,(Shotgun Racking),SFX & UI,"Threat, Weapon, Pump, Action",N/A
+In-Game,,(silence),SFX & UI,"Quiet, Awkward, Dead, Blank",N/A
+In-Game,,(Siren),SFX & UI,"Police, Ambulance, Emergency, Alert",N/A
+In-Game,,(Slap),SFX & UI,"Hit, Drama, Smack, Fight",N/A
+In-Game,,(Sneeze),Human Vocals,"Achoo, Sick, Allergy",
+In-Game,,(Splash),SFX & UI,"Water, Dive, Liquid, Drop",N/A
+In-Game,,(Splat),SFX & UI,"Slime, Hit, Messy, Crash",N/A
+In-Game,,(Suspense),Music Cues,"Tension, Thriller, Waiting, Scary",N/A
+In-Game,,(Thunder),SFX & UI,"Weather, Storm, Dramatic, Scary",N/A
+In-Game,,(Tire Screech),SFX & UI,"Brake, Car, Stop, Crash",N/A
+In-Game,,(Tires Screech),SFX & UI,"Brake, Car, Stop, Crash",N/A
+In-Game,,(Toilet Flushes),SFX & UI,"Gross, Bathroom, Water, Down the Drain",N/A
+In-Game,,(Vomit),Human Vocals,"Gross, Disgusting, Sick, Puke",
+In-Game,,(Whistle Down),SFX & UI,"Falling, Drop, Cartoon, Fail",N/A
+In-Game,,(Whistle Up),SFX & UI,"Rising, Flying, Cartoon",N/A
+In-Game,,(Wilhelm Scream),Pop Culture & Media,"Movie, Classic, Falling, Pain, Loud",Male
+In-Game,,(Wow),Internet & Memes,"Owen Wilson, Surprised, Classic",Male
+In-Game,,(Yay),Crowd & Atmosphere,"Cheering, Celebration, Happy",Crowd
+In-Game,,(YeeHaw),Human Vocals,"Cowboy, Country, Western, Hype",
+In-Game,,(Yeet),Internet & Memes,"Throw, Fast, Hype, High Energy",
+In-Game,,(You Lose),Pop Culture & Media,"Game Over, Fail, Mocking, Arcade",
+In-Game,,(Zombie),Pop Culture & Media,"Monster, Groan, Brains, Horror",
+Custom Sound,a dirty old bitch.wav,(a dirty old bitch),Internet & Memes,"Insult, Petty, Drama, Shocked",Male
+Custom Sound,A Few Moments Later.wav,(A Few Moments Later),Pop Culture & Media,"SpongeBob, Time Card, Narrator, Waiting","Male, French"
+Custom Sound,a white man - no!.wav,(a white man - no!),Internet & Memes,"Reaction, Sarcastic, Shocked, Funny",male
+Custom Sound,Aaahk - Chapelle.wav,(Aaahk - Chapelle),Pop Culture & Media,"Dave Chappelle, Choke, Gag, Shocked",Male
+Custom Sound,add a litte bit of spice.wav,(add a litte bit of spice),Internet & Memes,"Chef, Upgrade, Accent, Cooking, Extra",Male
+Custom Sound,ah shit.wav,(ah shit),Internet & Memes,"Regret, Annoyed, Swear",Male
+Custom Sound,ah-shit-here-we-go-again.wav,(ah-shit-here-we-go-again),Pop Culture & Media,"GTA, CJ, Meme, Relatable, Exhausted",Male
+Custom Sound,aint no thang.wav,(aint no thang),Internet & Memes,"Casual, Chill, No Problem",female
+Custom Sound,aint nobody got time.wav,(aint nobody got time),Internet & Memes,"Sweet Brown, Viral, Busy, Exhausted",Female
+Custom Sound,all day son.wav,(all day son),Internet & Memes,"Confident, Brag, Hype",Male
+Custom Sound,all day.wav,(all day),Internet & Memes,"Confident, Continuous, Nonstop",
+Custom Sound,am i the drama.wav,(am i the drama),Internet & Memes,"Scarlet Envy, Drag Queen, TikTok, Guilty",Male / Queen
+Custom Sound,amen brotha.wav,(amen brotha),Human Vocals,"Agreement, Church, Truth, Hype",Male
+Custom Sound,anime moan.wav,(anime-moan),Internet & Memes,,female
+Custom Sound,anime-wow.wav,(anime-wow),Internet & Memes,"High Pitch, Cute, Otaku, Reaction",Female
+Custom Sound,Another One - Khaled.wav,(Another One - Khaled),Internet & Memes,"DJ Khaled, Win, Success, Repeat",Male
+Custom Sound,apparently.wav,(apparently),Internet & Memes,"Noah Ritter, Cute, Kid, News Interview","Male, Child"
+Custom Sound,apple pay.wav,(apple pay),Internet & Memes,"Sound Effect, Chime, Money, Payment",N/A
+Custom Sound,are you a homo.wav,(are you a homo),Pop Culture & Media,"Vintage, Out of Context, Direct Question",
+Custom Sound,are you calling me stupid.wav,(are you calling me stupid),Pop Culture & Media,"Offended, Defensive, Argument, Drama",
+Custom Sound,are you kidding.wav,(are you kidding),Pop Culture & Media,"Disbelief, Shocked, Annoyed",
+Custom Sound,are you out of your gd mind.wav,(are you out of your gd mind),Pop Culture & Media,"Angry, Screaming, Shocked, Confrontation",
+Custom Sound,auughhh.wav,(auughhh),Internet & Memes,"Groan, Snore, Weird Noise",Male
+Custom Sound,awkward-crow-silence.wav,(awkward-crow-silence),SFX & UI,"Bird, Crickets, Unfunny, Bombing, Quiet",N/A
+Custom Sound,awooga - jess new girl.wav,(awooga - jess new girl),Pop Culture & Media,"New Girl, Horn-y, Flirty, Jaw Drop, Exaggerated",Female
+Custom Sound,ba dum tish.wav,(ba dum tish),SFX & UI,"Rimshot, Joke, Comedy, Unfunny",N/A
+Custom Sound,bang bang bang.wav,(bang bang bang),SFX & UI,"Gunshot, Knocking, Loud, Action",N/A
+Custom Sound,bang!.wav,(bang!),SFX & UI,"Single Shot, Pop, Surprise",N/A
+Custom Sound,bazinga.wav,(bazinga),Pop Culture & Media,"Big Bang Theory, Sheldon, Gotcha, Prank",Male
+Custom Sound,because i respect you.wav,(because i respect you),Pop Culture & Media,"Sincere, Sarcastic, Relationship, Drama",
+Custom Sound,biiiiiiitch.wav,(biiiiiiitch),Internet & Memes,"Key & Peele, Whisper, Sassy, Dramatic",Male
+Custom Sound,BIKES.wav,(BIKES),Internet & Memes,"Tom Segura, Screaming, Random, Loud",Male
+Custom Sound,BITCH.wav,(BITCH),Human Vocals,"Aggressive, Insult, Shout, Swear",
+Custom Sound,bleeh.wav,(bleeh),Human Vocals,"Gross, Tongue, Disgust",
+Custom Sound,bone-crack.wav,(bone-crack),SFX & UI,"Injury, Gross, Fight, Crunch",N/A
+Custom Sound,Boom.wav,(Boom),SFX & UI,"Explosion, Drop, Gotcha, Impact",N/A
+Custom Sound,boring etc.wav,(boring etc),Pop Culture & Media,"Dismissive, Annoyed, Uninterested",
+Custom Sound,boxing bell.wav,(boxing bell),SFX & UI,"Round 1, Fight, Ring, Match Start",N/A
+Custom Sound,breaking glass table.wav,(breaking glass table),SFX & UI,"Smash, Crash, Chaos, Destructive",N/A
+Custom Sound,brother ew.wav,(brother ew),Internet & Memes,"Gross, Disgusted, Judgmental, Viral",Male
+Custom Sound,bubbles.wav,(bubbles),SFX & UI,"Liquid, Underwater, Bloop",N/A
+Custom Sound,burp.wav,(burp),Human Vocals,"Gross, Indigestion, Rude",
+Custom Sound,butt butt butt.wav,(butt butt butt),Internet & Memes,"Goofy, Silly, Repetitive",
+Custom Sound,bye bitch.wav,(bye bitch),Internet & Memes,"Dismissive, Sassy, Leaving, Insult",
+Custom Sound,bye felicia.wav,(bye felicia),Pop Culture & Media,"Friday, Ice Cube, Dismissive, Cold",Male
+Custom Sound,bye-bye kid.wav,(bye-bye kid),Pop Culture & Media,"Creepy, Taunting, Leaving",
+Custom Sound,byee - female.wav,(byee - female),Human Vocals,"Friendly, Leaving, Wave",Female
+Custom Sound,byee - male.wav,(byee - male),Human Vocals,"Friendly, Leaving, Wave",Male
+Custom Sound,camera click.wav,(camera click),SFX & UI,"Photo, Shutter, Flash, Caught",N/A
+Custom Sound,can i pet that dawg.wav,(can i pet that dawg),Internet & Memes,"Cute, Viral, Kid, Animal, Southern","Male, Child"
+Custom Sound,can we take a moment to celebrate me.wav,(can we take a moment to celebrate me),Pop Culture & Media,"Selfish, Sassy, Confident, Main Character",
+Custom Sound,can you shut the f up.wav,(can you shut the f up),Human Vocals,"Aggressive, Rude, Annoyed, Silence",
+Custom Sound,cartoon malfunction.wav,(cartoon malfunction),SFX & UI,"Robot, Error, Break, Sparks, Quirky",N/A
+Custom Sound,cartoon snore.wav,(cartoon snore),SFX & UI,"Mimimi, Sleep, Boring, Tired",N/A
+Custom Sound,cash register.wav,(cash register),SFX & UI,"Cha-Ching, Money, Rich, Sale",N/A
+Custom Sound,cat - sci fi.wav,(cat - sci fi),SFX & UI,"Meow, Cyber, Futuristic, Alien Pet",N/A
+Custom Sound,cat.wav,(cat),SFX & UI,"Purr, Meow, Animal",N/A
+Custom Sound,chewbacca.wav,(chewbacca),Pop Culture & Media,"Star Wars, Wookiee, Roar, Groan",Creature
+Custom Sound,chomp.wav,(chomp),SFX & UI,"Bite, Eating, Crunchy",N/A
+Custom Sound,christmas bells.wav,(christmas bells),SFX & UI,"Sleigh, Holiday, Winter, Jingle",N/A
+Custom Sound,clear throat - female.wav,(clear throat - female),Human Vocals,"Ahem, Attention, Passive Aggressive",Female
+Custom Sound,clear throat - male.wav,(clear throat - male),Human Vocals,"Ahem, Attention, Passive Aggressive",Male
+Custom Sound,cocaine is.wav,(cocaine is),Pop Culture & Media,"Rick James, Drugs, Wild, Confession",Male
+Custom Sound,cork pop.wav,(cork pop),SFX & UI,"Wine, Champagne, Celebrate, Opening",N/A
+Custom Sound,crack&cocaine.wav,(crack&cocaine),Internet & Memes,"Viral, Out of Context, Shocking",
+Custom Sound,cracking whip.wav,(cracking whip),SFX & UI,"Whiplash, Controlled, Burn, Caught",N/A
+Custom Sound,crowd - amen.wav,(crowd - amen),Crowd & Atmosphere,"Preach, Agreement, Church, Collective",Crowd
+Custom Sound,crowd - golf clap.wav,(crowd - golf clap),Crowd & Atmosphere,"Polite, Boring, Low Energy, Sarcastic",Crowd
+Custom Sound,crowd - wow edgy.wav,(crowd - wow edgy),Crowd & Atmosphere,"Sarcastic, Mocking, Cringe, Groan",Crowd
+Custom Sound,crowd booing.wav,(crowd booing),Crowd & Atmosphere,"Negative, Rejection, Angry, Thumbs Down",Crowd
+Custom Sound,Crowd cheering.wav,(Crowd cheering),Crowd & Atmosphere,"Appreciative, Happy, Win, Celebration",Crowd
+Custom Sound,crowd dissapointed.wav,(crowd dissapointed),Crowd & Atmosphere,"Aww, Fail, Sad, Letdown",Crowd
+Custom Sound,crowd gasp.wav,(crowd gasp),Crowd & Atmosphere,"Shocked, Dramatic, Plot Twist, Surprised",Crowd
+Custom Sound,crowd kid EW.wav,(crowd kid EW),Crowd & Atmosphere,"Gross, Disgusted, Child, Funny","Crowd, Children"
+Custom Sound,crowd kids booing.wav,(crowd kids booing),Crowd & Atmosphere,"Negative, Rejection, Childish, Mocking","Crowd, Children"
+Custom Sound,Crowd Laugh Track.wav,(Crowd Laugh Track),Crowd & Atmosphere,"Sitcom, Comedy, Setup, TV Show",Crowd
+Custom Sound,crowd ooh.wav,(crowd ooh),Crowd & Atmosphere,"Impressed, Burn, Drama, Gossip",Crowd
+Custom Sound,Crowd Panic.wav,(Crowd Panic),Crowd & Atmosphere,"Chaos, Screaming, Terror, Danger",Crowd
+Custom Sound,crowd WOW.wav,(crowd WOW),Crowd & Atmosphere,"Amazed, Shocked, Surprised",Crowd
+Custom Sound,daammn-friday.wav,(daammn-friday),Pop Culture & Media,"Friday, Chris Tucker, Burn, Impressed",Male
+Custom Sound,daddy chill.wav,(daddy chill),Internet & Memes,"Viral, Weird, Calm Down, Confrontation",Male
+Custom Sound,damn-kevin hart.wav,(damn-kevin hart),Pop Culture & Media,"Kevin Hart, Shocked, Disbelief",Male
+Custom Sound,damnit focus.wav,(damnit focus),Human Vocals,"Stern, Serious, Pay Attention",
+Custom Sound,dear lord help me father.wav,(dear lord help me father),Human Vocals,"Desperate, Praying, Exhausted, Stressed",
+Custom Sound,deez nuts.wav,(deez nuts),Internet & Memes,"WelvenDaGreat, Viral, Prank, Gotcha",Male
+Custom Sound,delight to the senses.wav,(delight to the senses),Pop Culture & Media,"Sarcastic, Fancy, Over the Top, Classy",
+Custom Sound,demure mindful.wav,(demure mindful),Internet & Memes,"TikTok, Calm, Sarcastic, Proper, Trendy",Female
+Custom Sound,denial - your husband is gay.wav,(denial - your husband is gay),Pop Culture & Media,"Drama, Reality TV, Calling Out, Shocking",Female
+Custom Sound,dibs.wav,(dibs),Human Vocals,"Claiming, Fast, Mine",
+Custom Sound,did we just become best friends.wav,(did we just become best friends),Pop Culture & Media,"Step Brothers, Hype, Agreement, Happy",Male
+Custom Sound,dinosaur roar.wav,(dinosaur roar),SFX & UI,"Monster, Animal, Loud, Jurassic",Creature
+Custom Sound,dinosaur.wav,(dinosaur),SFX & UI,"Monster, Growl, Animal",Creature
+Custom Sound,DJ Airhorn.wav,(DJ Airhorn),SFX & UI,"Hype, Reggae, Sound Effect, Loud",N/A
+Custom Sound,do i make you horny bby.wav,(do i make you horny bby),Pop Culture & Media,"Austin Powers, Flirty, Silly, Retro",Male
+Custom Sound,does he look like a bitch.wav,(does he look like a bitch),Pop Culture & Media,"Pulp Fiction, Samuel L Jackson, Threat, Angry",Male
+Custom Sound,Dog Bark Angry.wav,(Dog Bark Angry),SFX & UI,"Aggressive, Guard, Vicious, Animal",N/A
+Custom Sound,DOH!.wav,(DOH!),Pop Culture & Media,"The Simpsons, Homer, Mistake, Fail, Regret",Male
+Custom Sound,dont bend over.wav,(dont bend over),Human Vocals,"Warning, Out of Context, Sketchy",
+Custom Sound,dont call me.wav,(dont call me),Human Vocals,"Dismissive, Boundaries, Reject",
+Custom Sound,dont worry bout it sweetheart.wav,(dont worry bout it sweetheart),Internet & Memes,"Sassy, Dismissive, Shady, Casual",
+Custom Sound,door knock.wav,(door knock),SFX & UI,"Rappers, Visitor, Surprise, Sound Effect",N/A
+Custom Sound,drip drip drip.wav,(drip drip drip),SFX & UI,"Water, Leak, Plumbing, Slow",N/A
+Custom Sound,drugs.wav,(drugs),Human Vocals,"Blunt, Out of Context, Confession",
+Custom Sound,duck.wav,(duck),SFX & UI,"Quack, Animal, Bird",N/A
+Custom Sound,elphaba riff.wav,(elphaba riff),Pop Culture & Media,"Wicked, Singing, Dramatic, High Note, Belt",Female
+Custom Sound,emotional damage.wav,(emotional damage),Internet & Memes,"Steven He, Burn, Savage, Fail, Roasted",Male
+Custom Sound,error.wav,(error),SFX & UI,"System, Buzz, Wrong, Fail",N/A
+Custom Sound,exploding kitten.wav,(exploding kitten),SFX & UI,"Boom, Card Game, Cat, Cartoon",N/A
+Custom Sound,f ya life bing bong.wav,(f ya life bing bong),Internet & Memes,"Nems, New York, Street, Aggressive, Viral",Male
+Custom Sound,faaah.wav,(faaah),Human Vocals,"Disgust, Exasperated, Sigh",
+Custom Sound,fart - random.wav,(fart - random),SFX & UI,"Gross, Funny, Gas, Surprise",N/A
+Custom Sound,fashion show at lunch.wav,(fashion show at lunch),Pop Culture & Media,"The Office, Kelly Kapoor, Gossip, Sassy",Female
+Custom Sound,fast as fuck boi.wav,(fast as fuck boi),Internet & Memes,"Keemstar, Speed, Running, Zooming",Male
+Custom Sound,fbi open up.wav,(fbi open up),Internet & Memes,"Raid, Loud, Caught, Explosion, Police",Male
+Custom Sound,for crying out loud.wav,(for crying out loud),Human Vocals,"Frustrated, Annoyed, Old School",
+Custom Sound,fortnite death.wav,(fortnite death),Pop Culture & Media,"Gaming, Knocked, Lose, Sound Effect",N/A
+Custom Sound,freaky-deaky.wav,(freaky-deaky),Internet & Memes,"Weird, Sus, Suggestive, Quirky",
+Custom Sound,friday night gentlemen its on.wav,(friday night gentlemen its on),Pop Culture & Media,"Hype, Weekend, Confident, Let's Go",Male
+Custom Sound,fuck you son.wav,(fuck you son),Human Vocals,"Aggressive, Insult, Argument",Male
+Custom Sound,fuck you.wav,(fuck you),Human Vocals,"Aggressive, Angry, Swear, Shut Up",
+Custom Sound,gahdamn.wav,(gahdamn),Internet & Memes,"Reaction, Impressed, Shocked, Accent",Male
+Custom Sound,get over here - scorpion.wav,(get over here - scorpion),Pop Culture & Media,"Mortal Kombat, Combat, Hook, Aggressive",Male
+Custom Sound,gey-echo.wav,(gey-echo),Internet & Memes,"Community, Chang, Mocking, Insult",Male
+Custom Sound,goat-random1.wav,(goat-random1),SFX & UI,"Bleat, Scream, Animal, Funny",N/A
+Custom Sound,goku ultra instinct.wav,(goku ultra instinct),Pop Culture & Media,"Anime, DBZ, Hype, God Mode, Power Up",N/A
+Custom Sound,goo-goo-gaga.wav,(goo-goo-gaga),Human Vocals,"Baby, Cute, Childish",Baby
+Custom Sound,good-byeeeeee.wav,(good-byeeeeee),Human Vocals,"Dramatic, Leaving, Singing",
+Custom Sound,goodnight dude bitch.wav,(goodnight dude bitch),Internet & Memes,"Aggressive, Dismissive, Going to Bed",Male
+Custom Sound,goodnight.wav,(goodnight),Human Vocals,"Calm, Sleep, Standard",
+Custom Sound,goofy sound.wav,(goofy sound),SFX & UI,"Cartoon, Silly, Whimsical",N/A
+Custom Sound,got eem.wav,(got eem),Internet & Memes,"Prank, Gotcha, Deez Nuts, Burn",Male
+Custom Sound,gotcha bitch!.wav,(gotcha bitch!),Pop Culture & Media,"Dave Chappelle, Caught, Prank, Surprise",Male
+Custom Sound,gotta be no dawg.wav,(gotta be no dawg),Internet & Memes,"Rejection, Disbelief, No Way",Male
+Custom Sound,greeting - female.wav,(greeting - female),Human Vocals,"Hello, Polite, Friendly",Female
+Custom Sound,grunt - tim allen.wav,(grunt - tim allen),Pop Culture & Media,"Home Improvement, Manly, Confused, Tool Time",Male
+Custom Sound,Gun Burst.wav,(Gun Burst),SFX & UI,"Firearm, Shooting, Action, Rapid",N/A
+Custom Sound,gun cock and shot.wav,(gun cock and shot),SFX & UI,"Weapon, Danger, Bang, Threat",N/A
+Custom Sound,Gun Shot.wav,(Gun Shot),SFX & UI,"Firearm, Bang, Weapon, Action",N/A
+Custom Sound,GUP.wav,(GUP),Internet & Memes,"Gasp, Weird, Random, Quick",
+Custom Sound,ha-gay.wav,(ha-gay),Pop Culture & Media,"Community, Senor Chang, Mocking, Insult",Male
+Custom Sound,haaa - scared.wav,(haaa - scared),Human Vocals,"Gasp, Frightened, Surprise",
+Custom Sound,hallelujah.wav,(hallelujah),Music Cues,"Church, Choir, Holy, Miracle, Win",Crowd
+Custom Sound,have you tried turning it off and on.wav,(have you tried turning it off and on),Pop Culture & Media,"IT Crowd, Tech Support, Sarcastic, Nerdy",Male
+Custom Sound,he knew he f-ed up.wav,(he knew he f-ed up),Internet & Memes,"Narrator, Regret, Mistake, Karma, Fail",Male
+Custom Sound,heartbeats.wav,(heartbeats),SFX & UI,"Thumping, Tension, Fear, Nervous, Pulse",N/A
+Custom Sound,heavy breathing - male.wav,(heavy breathing - male),Human Vocals,"Creepy, Tired, Suspense, Exhausted",Male
+Custom Sound,hee hee - MJ.wav,(hee hee - MJ),Pop Culture & Media,"Michael Jackson, Music, Pop, High Pitch",Male
+Custom Sound,hehehuhuh.wav,(hehehuhuh),Human Vocals,"Laugh, Mischievous, Chuckle, Goofy",
+Custom Sound,hello - seinfeld.wav,(hello - seinfeld),Pop Culture & Media,"Seinfeld, Jerry, Newman, Resentful, Grudge",Male
+Custom Sound,hello motherfucker.wav,(hello motherfucker),Internet & Memes,"Bold, Aggressive, Surprise Entrance, Swear",Male
+Custom Sound,hello there.wav,(hello there),Pop Culture & Media,"Star Wars, Obi-Wan, Greeting, Smooth",Male
+Custom Sound,help is on the way dear.wav,(help is on the way dear),Pop Culture & Media,"Mrs. Doubtfire, Robin Williams, Panic, Rescue",Female Persona
+Custom Sound,HELP scream.wav,(HELP scream),Human Vocals,"Panic, Emergency, Loud, Terror",
+Custom Sound,HELP.wav,(HELP),Human Vocals,"Desperate, Danger, Distress",
+Custom Sound,hes escaping.wav,(hes escaping),Pop Culture & Media,"Alarm, Running Away, Catch Him",
+Custom Sound,hes gay.wav,(hes gay),Pop Culture & Media,"Blunt, Statement, Out of Context",
+Custom Sound,hey stinky.wav,(hey stinky),Internet & Memes,"Insult, Playful, Teasing, Gross",Child
+Custom Sound,hey wake up-male.wav,(hey wake up-male),Human Vocals,"Alert, Alarm, Shouting",Male
+Custom Sound,hey-thats-pretty-good.wav,(hey-thats-pretty-good),Internet & Memes,"iDubbbz, Approval, Impressed, Sarcastic",Male
+Custom Sound,"hey, hey.wav","(hey, hey)",Human Vocals,"Attention, Quick, Casual",
+Custom Sound,heyoooo.wav,(heyoooo),Internet & Memes,"Hype, Intro, Greeting, Loud",Male
+Custom Sound,hi-yah.wav,(hi-yah),Human Vocals,"Karate, Punch, Martial Arts, Action",
+Custom Sound,hide your kids hide your wife.wav,(hide your kids hide your wife),Internet & Memes,"Antoine Dodson, Viral, Danger, Panic, Iconic",Male
+Custom Sound,Holy sound.wav,(Holy sound),Music Cues,"Choirs, Angels, Heaven, Glowing, Reveal",N/A
+Custom Sound,how rude!.wav,(how rude!),Pop Culture & Media,"Full House, Stephanie Tanner, Sassy, Offended","Female, Child"
+Custom Sound,how yall doin.wav,(how yall doin),Human Vocals,"Southern, Greeting, Casual",
+Custom Sound,howdy-ho.wav,(howdy-ho),Pop Culture & Media,"South Park, Mr. Hankey, High Pitch, Festive",Male
+Custom Sound,huh.wav,(huh),Human Vocals,"Confused, Question, Deaf",
+Custom Sound,i been missin you.wav,(i been missin you),Internet & Memes,"Sweet, Emotional, Affectionate",
+Custom Sound,i cant believe youve done this.wav,(i cant believe youve done this),Internet & Memes,"Classic Vine, British, Punched, Shocked",Male
+Custom Sound,i dont know how to respond to that.wav,(i dont know how to respond to that),Human Vocals,"Awkward, Stunned, Speechless, Silenced",
+Custom Sound,i dont understand.wav,(i dont understand),Human Vocals,"Confused, Lost, Blank",
+Custom Sound,I dont wanna do this.wav,(I dont wanna do this),Human Vocals,"Reluctant, Regret, Fear, Hesitant",
+Custom Sound,i dont watch the news.wav,(i dont watch the news),Pop Culture & Media,"Oblivious, Ignorant, Detached",
+Custom Sound,i find that arousing.wav,(i find that arousing),Pop Culture & Media,"Sus, Suggestive, Flirty, Direct",
+Custom Sound,i got something to say to you man.wav,(i got something to say to you man),Pop Culture & Media,"Confrontation, Serious, Drama",Male
+Custom Sound,i got thick thighs fat ass.wav,(i got thick thighs fat ass),Internet & Memes,"TikTok, Body Positive, Brag, Sassy",Female
+Custom Sound,i havent even begun to peak.wav,(i havent even begun to peak),Pop Culture & Media,"Always Sunny, Dennis Reynolds, Unhinged, Ego",Male
+Custom Sound,i hope i dont fall.wav,(i hope i dont fall),Human Vocals,"Clumsy, Unsteady, Warning",
+Custom Sound,i just a baby.wav,(i just a baby),Internet & Memes,"TikTok, Innocent, Excuse, Cute",Child
+Custom Sound,I like turtles.wav,(I like turtles),Internet & Memes,"Zombie Kid, Viral, Random, Out of Context","Male, Child"
+Custom Sound,i love you - scream.wav,(i love you - scream),Human Vocals,"Aggressive Affection, Loud, Intense",
+Custom Sound,I love you bitch.wav,(I love you bitch),Internet & Memes,"Vine, Acoustic Guitar, Aggressive Affection",Male
+Custom Sound,i need to calm down.wav,(i need to calm down),Human Vocals,"Anxious, Stressed, Breathing",
+Custom Sound,i shall unleash my fury.wav,(i shall unleash my fury),Pop Culture & Media,"Always Sunny, Dennis, Golden God, Angry",Male
+Custom Sound,i talk a lot.wav,(i talk a lot),Human Vocals,"Chatty, Confession, Apology",
+Custom Sound,i wanna kill ya.wav,(i wanna kill ya),Human Vocals,"Aggressive, Threat, Angry",
+Custom Sound,i want to go to there.wav,(i want to go to there),Pop Culture & Media,"30 Rock, Liz Lemon, Jealous, Craving, Food",Female
+Custom Sound,i was scared half to death.wav,(i was scared half to death),Human Vocals,"Relief, Shocked, Terrified",
+Custom Sound,i will find you and i will kill you - taken.wav,(i will find you and i will kill you - taken),Pop Culture & Media,"Taken, Liam Neeson, Threat, Serious, Action","Male, Adult"
+Custom Sound,i would like to see the baby.wav,(i would like to see the baby),Pop Culture & Media,"The Mandalorian, Werner Herzog, Demand, Calm","Male, Adult"
+Custom Sound,idk something amazing - incredibles.wav,(idk something amazing - incredibles),Pop Culture & Media,"The Incredibles, Dash, Exciting, Superhero","Male, Child"
+Custom Sound,im a star.wav,(im a star),Pop Culture & Media,"Confident, Main Character, Dramatic",
+Custom Sound,im batman.wav,(im batman),Pop Culture & Media,"Batman, Deep Voice, Superhero, Gritty","Male, Adult"
+Custom Sound,im broke.wav,(im broke),Human Vocals,"Poor, Sad, Relatable, No Money",
+Custom Sound,im down for whatever.wav,(im down for whatever),Human Vocals,"Casual, Chill, Agreeable, Up for Anything",
+Custom Sound,im dying help me.wav,(im dying help me),Human Vocals,"Dramatic, Exaggerated, Pain, Medical",
+Custom Sound,im fat.wav,(im fat),Human Vocals,"Blunt, Relatable, Food",
+Custom Sound,Im in danger.wav,(Im in danger),Pop Culture & Media,"The Simpsons, Ralph Wiggum, Oblivious, Meme","Male, Child"
+Custom Sound,im in my moms car.wav,(im in my moms car),Internet & Memes,"Vine, Get Out, Classic, Broom Broom","Female, Teens"
+Custom Sound,im in my prime.wav,(im in my prime),Human Vocals,"Confident, Alpha, Strong, Peak",
+Custom Sound,im sat.wav,(im sat),Internet & Memes,"Attentive, Respectful, Simping, TikTok",
+Custom Sound,im sorry.wav,(im sorry),Human Vocals,"Apology, Regret, Polite",
+Custom Sound,im tired of this gpa.wav,(im tired of this gpa),Pop Culture & Media,"Holes, Tired, Working, Exhausted, Misspoke","Male, Child"
+Custom Sound,in da clurb we all fam.wav,(in da clurb we all fam),Pop Culture & Media,"Broad City, Ilana, Party, Clubbing, Friends","Female, Adult"
+Custom Sound,insubordinate & churlish.wav,(insubordinate & churlish),Pop Culture & Media,"Key & Peele, Key, A-A-ron, Angry, Teacher","Male, Adult"
+Custom Sound,itsa trap.wav,(itsa trap),Pop Culture & Media,"Star Wars, Admiral Ackbar, Warning, Danger","Male, Alien"
+Custom Sound,ive contained my rage for as long as possible.wav,(ive contained my rage for as long as possible),Pop Culture & Media,"Always Sunny, Dennis Reynolds, Unhinged, Angry","Male, Adult"
+Custom Sound,jaws.wav,(jaws),Music Cues,"Shark, Danger, Suspense, Creeping, Movie",N/A
+Custom Sound,just do it.wav,(just do it),Internet & Memes,"Shia LaBeouf, Motivational, Intense, Loud","Male, Adult"
+Custom Sound,just doin what my momma learnt me.wav,(just doin what my momma learnt me),Internet & Memes,"Southern, Quirky, Excuse, Simple",
+Custom Sound,kiss - long cartoon.wav,(kiss - long cartoon),SFX & UI,"Smooch, Romance, Gross, Exaggerated",N/A
+Custom Sound,know what they call you.wav,(know what they call you),Pop Culture & Media,"Accusation, Drama, Calling Out",
+Custom Sound,ladies & gentemen HER.wav,(ladies & gentemen HER),Internet & Memes,"Hype, Introduction, Applause, TikTok","Male, Adult"
+Custom Sound,laugh - beavis butthead.wav,(laugh - beavis butthead),Pop Culture & Media,"Beavis and Butt-Head, Chuckle, Dumb, Retro","Male, Teens"
+Custom Sound,laugh - duck.wav,(laugh - duck),SFX & UI,"Animal, Quack, Wheezing, Goofy",N/A
+Custom Sound,laugh - giggle female.wav,(laugh - giggle female),Human Vocals,"Giggle, Cute, Quick",Female
+Custom Sound,laugh - hysterical.wav,(laugh - hysterical),Human Vocals,"Wild, Crazy, Unhinged, Crying",
+Custom Sound,laugh - jeff goldblum.wav,(laugh - jeff goldblum),Pop Culture & Media,"Jurassic Park, Quirky, Awkward, Classic","Male, Adult"
+Custom Sound,laugh - meme.wav,(laugh - meme),Internet & Memes,"Viral, Track, Funny, Relatable",
+Custom Sound,laugh - oh no.wav,(laugh - oh no),Internet & Memes,"TikTok, Wheezing, High Pitch, Annoying",
+Custom Sound,laugh-goofy1.wav,(laugh-goofy1),Pop Culture & Media,"Disney, Goofy, Hyuck, Silly, Cartoon",Male
+Custom Sound,laugh-nelson.wav,(laugh-nelson),Pop Culture & Media,"The Simpsons, Nelson, Ha-Ha, Mocking, Fail","Male, Child"
+Custom Sound,leroy jenkins.wav,(leroy jenkins),Internet & Memes,"World of Warcraft, Gaming, Chaos, Loud, Charge","Male, Adult"
+Custom Sound,let me tell you something.wav,(let me tell you something),Pop Culture & Media,"Aggressive, Intense, Rant, Listen Up",Male
+Custom Sound,lets-a-go - mario.wav,(lets-a-go - mario),Pop Culture & Media,"Nintendo, Mario, Gaming, Hype, Start",Male
+Custom Sound,LIAR.wav,(LIAR),Human Vocals,"Shouting, Accusation, Angry, Drama",
+Custom Sound,lick.wav,(lick),SFX & UI,"Gross, Slurp, Tongue",N/A
+Custom Sound,light saber.wav,(light saber),SFX & UI,"Star Wars, Laser, Whoosh, Weapon",N/A
+Custom Sound,like the crashing of a thousand waves.wav,(like the crashing of a thousand waves),Pop Culture & Media,"Always Sunny, Dennis, Untethered, Golden God","Male, Adult"
+Custom Sound,Look at all those Chickens.wav,(Look at all those Chickens),Internet & Memes,"Vine, Geese, Kid, Cute, Wrong","Female, Child"
+Custom Sound,look at my ass!.wav,(look at my ass!),Human Vocals,"Shouting, Sassy, Attention, Out of Context",
+Custom Sound,look at this gentleman.wav,(look at this gentleman),Internet & Memes,"Polite, Sophisticated, Classy, Cat/Dog Meme","Male, Adult"
+Custom Sound,look im gay.wav,(look im gay),Human Vocals,"Out of Context, Confession, Blunt",
+Custom Sound,loser - ace ventura.wav,(loser - ace ventura),Pop Culture & Media,"Ace Ventura, Jim Carrey, Insult, Mocking, Drama","Male, Adult"
+Custom Sound,mario death.wav,(mario death),Pop Culture & Media,"Nintendo, Mario, Gaming, Fail, Game Over",N/A
+Custom Sound,mario jump.wav,(mario jump),Pop Culture & Media,"Nintendo, Mario, Gaming, Boing, Action",N/A
+Custom Sound,mario kart start.wav,(mario kart start),Pop Culture & Media,"Nintendo, Racing, Countdown, Countdown, Hype",N/A
+Custom Sound,meep meep.wav,(meep meep),Pop Culture & Media,"Looney Tunes, Road Runner, Fast, Leaving",N/A
+Custom Sound,meow shee.wav,(meow shee),Internet & Memes,"Cat, Weird Vocal, Accent, Quirky",
+Custom Sound,mic-feedback.wav,(mic-feedback),SFX & UI,"Loud, Screech, High Pitch, Interruption",N/A
+Custom Sound,Mine mine mine.wav,(Mine mine mine),Pop Culture & Media,"Finding Nemo, Seagulls, Greedy, Selfish","Crowd, Animals"
+Custom Sound,mm-hm.wav,(mm-hm),Human Vocals,"Agreement, Sassy, Listening",
+Custom Sound,mmhmm alright.wav,(mmhmm alright),Human Vocals,"Sarcastic, Skeptical, Suspicious",
+Custom Sound,mmm mmm bitch.wav,(mmm mmm bitch),Internet & Memes,"Sassy, Attitude, Insult, Drama",
+Custom Sound,mmm-girl.wav,(mmm-girl),Human Vocals,"Sassy, Impressed, Attitude",Female
+Custom Sound,mmm-homer.wav,(mmm-homer),Pop Culture & Media,"The Simpsons, Homer, Drooling, Food, Craving","Male, Adult"
+Custom Sound,mockingbird.wav,(mockingbird),Pop Culture & Media,"Dumb and Dumber, Singing, Annoying, Road Trip",Duo
+Custom Sound,mother i crave violence.wav,(mother i crave violence),Internet & Memes,"Cat Meme, Chaos, Unhinged, Dark Comedy",Childish
+Custom Sound,motherfucker where is it.wav,(motherfucker where is it),Human Vocals,"Angry, Demanding, Swear, Lost",
+Custom Sound,music - always sunny.wav,(music - always sunny),Music Cues,"Always Sunny, Theme Song, Whimsical, Irony",N/A
+Custom Sound,music - am i better than everyone.wav,(music - am i better than everyone),Music Cues,"The White Lotus, Snobby, Main Character, Dramatic",N/A
+Custom Sound,music - bad jurassic park.wav,(music - bad jurassic park),Music Cues,"Flute, Melodica, Fail, Shitty Flute, Meme",N/A
+Custom Sound,music - bad to the bone riff.wav,(music - bad to the bone riff),Music Cues,"Guitar, Alpha, Tough, Badass, Sarcastic",N/A
+Custom Sound,music - bitch u guessed it.wav,(music - bitch u guessed it),Music Cues,"OG Maco, Rap, Drop, Hype, Shocked",N/A
+Custom Sound,music - careless whisper.wav,(music - careless whisper),Music Cues,"George Michael, Saxophone, Sexy, Flirty, Romance",N/A
+Custom Sound,music - curb outro.wav,(music - curb outro),Music Cues,"Curb Your Enthusiasm, Fail, Awkward, Credits",N/A
+Custom Sound,music - dont be sus.wav,(music - dont be sus),Music Cues,"Among Us Vibe, Suspicious, Sketchy, Mystery",N/A
+Custom Sound,music - elevator.wav,(music - elevator),Music Cues,"Muzak, Waiting, Boring, Awkward, Hold",N/A
+Custom Sound,music - funkytown - bad.wav,(music - funkytown - bad),Music Cues,"Low Quality, Shitty Cover, Meme, Goofy",N/A
+Custom Sound,music - gay cats.wav,(music - gay cats),Internet & Memes,"Chipi Chipi Chapa Chapa, TikTok, Cute, Loop",N/A
+Custom Sound,music - GTA.wav,(music - GTA),Music Cues,"Grand Theft Auto, Mission Passed, Success, Win",N/A
+Custom Sound,music - helen keller.wav,(music - helen keller),Music Cues,"Dark Comedy, Out of Context, Silence",N/A
+Custom Sound,music - Hello Adele.wav,(music - Hello Adele),Music Cues,"Adele, Sad, Emotional, Dramatic, Call",N/A
+Custom Sound,music - his name is john cena.wav,(music - his name is john cena),Music Cues,"John Cena, Hype, Loud, Surprise Entrance",N/A
+Custom Sound,music - i dont understand.wav,(music - i dont understand),Music Cues,"Confused, Eerie, Mysterious",N/A
+Custom Sound,music - i feel good .wav,(music - i feel good ),Music Cues,"James Brown, Happy, Energetic, Funky",N/A
+Custom Sound,music - imperial march.wav,(music - imperial march),Music Cues,"Star Wars, Darth Vader, Evil, Villain, Threat",N/A
+Custom Sound,music - jeopardy.wav,(music - jeopardy),Music Cues,"Thinking, Clock, Timer, Waiting, Quiz",N/A
+Custom Sound,music - jet holiday.wav,(music - jet holiday),Music Cues,"Retro, Travel, Upbeat, Cheerful",N/A
+Custom Sound,music - john cena.wav,(music - john cena),Music Cues,"WWE, Hype, Trumpets, Surprise, Loud",N/A
+Custom Sound,music - let-her-go.wav,(music - let-her-go),Music Cues,"Passenger, Sad, Emotional, Heartbreak",N/A
+Custom Sound,music - mandalorian.wav,(music - mandalorian),Music Cues,"Star Wars, Epic, Badass, Sci-Fi",N/A
+Custom Sound,music - MJ sounds.wav,(music - MJ sounds),Music Cues,"Michael Jackson, Beat, Pop, Dance",N/A
+Custom Sound,music - more passion.wav,(music - more passion),Internet & Memes,"TikTok, Energy, Dance, Footwork, French","Male, Adult"
+Custom Sound,music - nirvana laugh.wav,(music - nirvana laugh),Music Cues,"Grunge, Rock, Sarcastic, Grungy",N/A
+Custom Sound,music - no -0 cent .wav,(music - no -0 cent ),Music Cues,"50 Cent, In Da Club, Rap, Birthday, Vibe",N/A
+Custom Sound,music - nobodys gonna know.wav,(music - nobodys gonna know),Internet & Memes,"TikTok Audio, Sneaky, Secret, Cheating",Duo
+Custom Sound,music - oh no.wav,(music - oh no),Internet & Memes,"TikTok, High Pitch, Capone, Annoying, Fail",N/A
+Custom Sound,music - Oh Yeah.wav,(music - Oh Yeah),Music Cues,"Ferris Bueller, Yello, Sexy, Deep Voice, Cool",N/A
+Custom Sound,music - please stand by.wav,(music - please stand by),SFX & UI,"TV Static, Technical Difficulties, Intermission",N/A
+Custom Sound,music - porno.wav,(music - porno),Music Cues,"Bow Chicka Wow Wow, 70s Funk, Sexy, Sus",N/A
+Custom Sound,music - rap god.wav,(music - rap god),Music Cues,"Eminem, Fast, Rapid, Skill, Intimidating",N/A
+Custom Sound,music - rickroll.wav,(music - rickroll),Music Cues,"Rick Astley, Prank, Gotcha, Bait and Switch",N/A
+Custom Sound,music - run.wav,(music - run),Music Cues,"AWOLNATION, Drop, Danger, Escape, Fast",N/A
+Custom Sound,music - sad meow.wav,(music - sad meow),Internet & Memes,"Cat, Crying, Emotional, Depressed",N/A
+Custom Sound,music - sad violin.wav,(music - sad violin),Music Cues,"Sarcastic, Crying, Melodramatic, Fail",N/A
+Custom Sound,music - seinfeld.wav,(music - seinfeld),Music Cues,"Seinfeld, Bass, Transition, Comedy, Retro",N/A
+Custom Sound,music - smelly cat.wav,(music - smelly cat),Pop Culture & Media,"Friends, Phoebe Buffay, Quirky, Acoustic","Female, Adult"
+Custom Sound,music - snoop dogg.wav,(music - snoop dogg),Music Cues,"Next Episode, Smoke Weed, Hip Hop, Chill",N/A
+Custom Sound,music - spiderman.wav,(music - spiderman),Music Cues,"Pizza Theme, Tobey Maguire, Upbeat, Chaos",N/A
+Custom Sound,music - star wars cantina.wav,(music - star wars cantina),Music Cues,"Star Wars, Aliens, Upbeat, Quirky, Tavern",N/A
+Custom Sound,music - surprise surprise.wav,(music - surprise surprise),Music Cues,"Reveal, Plot Twist, Sarcastic",N/A
+Custom Sound,music - talk dirty to me.wav,(music - talk dirty to me),Music Cues,"Jason Derulo, Trumpets, Suggestive, Sexy",N/A
+Custom Sound,music - that was rude.wav,(music - that was rude),Music Cues,"Dramatic, Judgmental, Offended",N/A
+Custom Sound,music - thats all folks.wav,(music - thats all folks),Pop Culture & Media,"Looney Tunes, Porky Pig, Ending, Credits, Outro",Male
+Custom Sound,music - they ask you how you are.wav,(music - they ask you how you are),Internet & Memes,"Katy Perry, Inner Sadness, Fake Smile, Meme","Female, Adult"
+Custom Sound,music - what do you mean.wav,(music - what do you mean),Music Cues,"Justin Bieber, Confused, Question",N/A
+Custom Sound,music - what does it mean.wav,(music - what does it mean),Internet & Memes,"Double Rainbow, Emotional, Overwhelmed","Male, Adult"
+Custom Sound,music - what the helly.wav,(music - what the helly),Music Cues,"Shocked, Confused, Upbeat",N/A
+Custom Sound,music - whats up with that.wav,(music - whats up with that),Pop Culture & Media,"SNL, Kenan Thompson, Energetic, Funky, Interruption","Male, Adult"
+Custom Sound,music - whisper song.wav,(music - whisper song),Music Cues,"Ying Yang Twins, Sexy, Sus, Quiet, Suggestive",N/A
+Custom Sound,music - why cant we be friends.wav,(music - why cant we be friends),Music Cues,"Peace, Sarcastic, Conflict, Friends",N/A
+Custom Sound,music - x files.wav,(music - x files),Music Cues,"Illuminati, Conspiracy, Aliens, Spooky, Mystery",N/A
+Custom Sound,music-mortal kombat!.wav,(music-mortal kombat!),Pop Culture & Media,"Techno, Hype, Electronic, Fighting, Energy",N/A
+Custom Sound,my d in a box.wav,(my d in a box),Pop Culture & Media,"SNL, Lonely Island, Justin Timberlake, Gift, Adult","Male, Duo"
+Custom Sound,my life be like.wav,(my life be like),Music Cues,"Grits, Ooh Ahh, Reflective, Nostalgic",N/A
+Custom Sound,my man.wav,(my man),Pop Culture & Media,"Rick and Morty, Mailman, Approval, Enthusiastic","Male, Adult"
+Custom Sound,my own private domicile.wav,(my own private domicile),Pop Culture & Media,"Breaking Bad, Jesse Pinkman, Defensive, Bitch","Male, Adult"
+Custom Sound,my precious.wav,(my precious),Pop Culture & Media,"Lord of the Rings, Gollum, Creepy, Greedy","Male, Monster"
+Custom Sound,news flash!.wav,(news flash!),Human Vocals,"Sarcastic, Announcement, Calling Out",
+Custom Sound,nice.wav,(nice),Internet & Memes,"South Park, 69, Click, Approval",Male
+Custom Sound,no - female.wav,(no - female),Human Vocals,"Rejection, Refusal, Blunt",Female
+Custom Sound,No - Michael.wav,(No - Michael),Pop Culture & Media,"The Office, Michael Scott, Panic, Desperate, God No","Male, Adult"
+Custom Sound,no deal no dice.wav,(no deal no dice),Human Vocals,"Refusal, Rejection, Final",
+Custom Sound,no ew - female.wav,(no ew - female),Human Vocals,"Gross, Disgusted, Reject",Female
+Custom Sound,No-annoying.wav,(No-annoying),Human Vocals,"Whining, Frustrated, Stop It",
+Custom Sound,nom nom nom.wav,(nom nom nom),SFX & UI,"Eating, Food, Crunchy, Cartoon",N/A
+Custom Sound,none of its true.wav,(none of its true),Internet & Memes,"Denial, Gossip, Drama, Deflection",
+Custom Sound,Noooo - darth vader.wav,(Noooo - darth vader),Pop Culture & Media,"Star Wars, Darth Vader, Dramatic, Anguish, Fail","Male, Cyborg"
+Custom Sound,not round here partner.wav,(not round here partner),Pop Culture & Media,"Western, Cowboy, Threat, Territorial",Male
+Custom Sound,nword you gay.wav,(nword you gay),Internet & Memes,"Boondocks Vibe, Out of Context, Blunt, Aggressive",Male
+Custom Sound,obviously.wav,(obviously),Human Vocals,"Sarcastic, Duh, Smartass",
+Custom Sound,Oh hell naw - sing.wav,(Oh hell naw - sing),Internet & Memes,"Musical, Denial, No Way, Sassy",
+Custom Sound,oh hell naw man wtf.wav,(oh hell naw man wtf),Internet & Memes,"Shocked, Disgusted, Trash, Viral",Male
+Custom Sound,oh long johnson.wav,(oh long johnson),Internet & Memes,"Talking Cat, Viral, Retro, Creepy, Nonsense",Animal
+Custom Sound,oh my god i dont care.wav,(oh my god i dont care),Pop Culture & Media,"Dismissive, Bored, Rude, Sassy",
+Custom Sound,oh my god no way.wav,(oh my god no way),Human Vocals,"Shocked, Excited, Disbelief",
+Custom Sound,oh my god.wav,(oh my god),Human Vocals,"Exclamatory, Surprised, Standard",
+Custom Sound,oh no our table.wav,(oh no our table),Internet & Memes,"Broken, Glass, Kid, Fail, Classic","Male, Child"
+Custom Sound,oh pwincess.wav,(oh pwincess),Human Vocals,"Mocking, Baby Talk, Sarcastic",
+Custom Sound,oh shit - not good.wav,(oh shit - not good),Human Vocals,"Regret, Danger, Mistake, Panic",
+Custom Sound,oh shit motherfker.wav,(oh shit motherfker),Human Vocals,"Surprise, Angry, Hype, Swear",Male
+Custom Sound,oh-yes-male.wav,(oh-yes-male),Human Vocals,"Approval, Enthusiastic, Deep Voice",Male
+Custom Sound,ok - liljohn.wav,(ok - liljohn),Pop Culture & Media,"Lil Jon, Rap, Hype, Loud","Male, Adult"
+Custom Sound,ok bye - frozen.wav,(ok bye - frozen),Pop Culture & Media,"Frozen, Anna, Leaving, Dismissive, Quick","Female, Child"
+Custom Sound,ok i like it picasso.wav,(ok i like it picasso),Internet & Memes,"TikTok, Abstract, Art, Approval, Sarcastic","Male, Adult"
+Custom Sound,OK lets go.wav,(OK lets go),Human Vocals,"Hype, Ready, Start, Energetic",
+Custom Sound,Ok perfect.wav,(Ok perfect),Human Vocals,"Agreement, Satisfied, Polite",
+Custom Sound,okay-meme.wav,(okay-meme),Internet & Memes,"Simple, Agreeable, Relatable",
+Custom Sound,omg becky.wav,(omg becky),Pop Culture & Media,"Sir Mix-A-Lot, Gossip, Judgmental, Valley Girl","Female, Adult"
+Custom Sound,omg my shayla.wav,(omg my shayla),Internet & Memes,"Viral, Dramatic, Calling Out, Sassy",Female
+Custom Sound,omg what is that.wav,(omg what is that),Internet & Memes,"Cardi B, Gross, Shocked, Confused, Viral","Female, Adult"
+Custom Sound,only thing - toilet seat.wav,(only thing - toilet seat),Pop Culture & Media,"Out of Context, Bathroom, Weird",
+Custom Sound,ooh pieceofcandy.wav,(ooh pieceofcandy),Pop Culture & Media,"Family Guy, James Woods, Trapped, Lured","Male, Adult"
+Custom Sound,ooh this is nice.wav,(ooh this is nice),Human Vocals,"Satisfied, Comfortable, Approval",
+Custom Sound,oops.wav,(oops),Human Vocals,"Mistake, Clumsy, Accident",
+Custom Sound,open the noor.wav,(open the noor),Internet & Memes,"Viral, Accent, Demanding, Knocking",Male
+Custom Sound,panic attack.wav,(panic attack),Human Vocals,"Breathing, Anxious, Stressed, Overwhelmed",
+Custom Sound,parkour.wav,(parkour),Pop Culture & Media,"The Office, Michael Scott, Gymnast, Jumping","Male, Adult"
+Custom Sound,pee on you drip.wav,(pee on you drip),Internet & Memes,"R. Kelly Vibe, Out of Context, Gross",Male
+Custom Sound,pink wine makes me slutty.wav,(pink wine makes me slutty),Pop Culture & Media,"Real Housewives, Drunk, Confession, Sassy, Wine","Female, Adult"
+Custom Sound,Police siren.wav,(Police siren),SFX & UI,"Siren, Emergency, Cop, Caught, Danger",N/A
+Custom Sound,price is wrong bitch.wav,(price is wrong bitch),Pop Culture & Media,"Happy Gilmore, Adam Sandler, Bob Barker, Fight","Male, Adult"
+Custom Sound,price is wrong music.wav,(price is wrong music),Music Cues,"Price Is Right, Fail, Sad Trombone, Loser",N/A
+Custom Sound,pussy on - he put.wav,(pussy on - he put),Internet & Memes,"Sassy, Over the Top, Slang, Hype",
+Custom Sound,pussy on - i want to.wav,(pussy on - i want to),Internet & Memes,"Desire, Bold, Slang",
+Custom Sound,pussy on - man i put.wav,(pussy on - man i put),Internet & Memes,"Confident, Brag, Slang",
+Custom Sound,pussy on - she put.wav,(pussy on - she put),Internet & Memes,"Sassy, Compliment, Slang, Hype",
+Custom Sound,pussy.wav,(pussy),Human Vocals,"Insult, Coward, Swear",
+Custom Sound,rawr.wav,(rawr),Internet & Memes,"Dinosaur, Cute, Emo, Cringe",Teens
+Custom Sound,Reveal sound.wav,(Reveal sound),SFX & UI,"Sting, Surprise, Magic, Unveil",N/A
+Custom Sound,rizz sound.wav,(rizz sound),Internet & Memes,"TikTok, Romance, Flirty, Smug, Whistle",N/A
+Custom Sound,SAIL.wav,(SAIL),Internet & Memes,"AWOLNATION, Epic Fail, Drop, Heavy, Jump","Male, Adult"
+Custom Sound,say my name.wav,(say my name),Pop Culture & Media,"Breaking Bad, Walter White, Alpha, Serious","Male, Adult"
+Custom Sound,say what.wav,(say what),Human Vocals,"Confused, Shocked, Question",
+Custom Sound,scream - goat.wav,(scream - goat),SFX & UI,"Animal, Human-like, Loud, Panic",N/A
+Custom Sound,scream - homer.wav,(scream - homer),Pop Culture & Media,"The Simpsons, Homer, High Pitch, Panic, Girlie","Male, Adult"
+Custom Sound,scream - sunny.wav,(scream - sunny),Pop Culture & Media,"Always Sunny, Charlie/Dennis, High Pitch, Terror","Male, Adult"
+Custom Sound,scream - toddler.wav,(scream - toddler),Human Vocals,"Tantrum, Child, Earrape, High Pitch, Annoying",Child
+Custom Sound,scream - tom.wav,(scream - tom),Pop Culture & Media,"Tom and Jerry, Cartoon, Pain, High Pitch, Yell","Male, Cat"
+Custom Sound,scream - unhinged-female.wav,(scream - unhinged-female),Human Vocals,"Meltdown, Psycho, Loud, Karen Vibe",Female
+Custom Sound,Scream - unhinged-male.wav,(Scream - unhinged-male),Human Vocals,"Rage, Meltdown, Psycho, Loud, Fury",Male
+Custom Sound,screw you guys im going home.wav,(screw you guys im going home),Pop Culture & Media,"South Park, Cartman, Leaving, Whiny, Mad","Male, Child"
+Custom Sound,serenity now.wav,(serenity now),Pop Culture & Media,"Seinfeld, Frank Costanza, Stress, Angry, Calm","Male, Elderly"
+Custom Sound,shawty what that thing do.wav,(shawty what that thing do),Internet & Memes,"Rap, Flirty, Slang, Suggestive",Male
+Custom Sound,sheesh.wav,(sheesh),Internet & Memes,"Trendy, High Pitch, Impressed, Flex",Group
+Custom Sound,shenanigans!.wav,(shenanigans!),Pop Culture & Media,"South Park, Calling Out, Prank, Skeptical",Male
+Custom Sound,shes an icon.wav,(shes an icon),Internet & Memes,"TikTok, Compliment, Stan, Sassy, Queen",Female
+Custom Sound,shut the f up - female.wav,(shut the f up - female),Human Vocals,"Aggressive, Rude, Annoyed, Shouting",Female
+Custom Sound,shut your fn mouth.wav,(shut your fn mouth),Human Vocals,"Angry, Swear, Aggressive, Silence",
+Custom Sound,silence i kill you.wav,(silence i kill you),Pop Culture & Media,"Jeff Dunham, Achmed, Puppet, Threat, Sarcastic","Male, Skeleton"
+Custom Sound,slay queen.wav,(slay queen),Internet & Memes,"Sassy, Compliment, Hype, Drag Vibe",
+Custom Sound,slay your enemies.wav,(slay your enemies),Pop Culture & Media,"Fantasy, Aggressive, Battle, Threat",
+Custom Sound,smoke-detector-beep.wav,(smoke-detector-beep),SFX & UI,"Chirp, Annoying, Battery, House, Interruption",N/A
+Custom Sound,someone cooked here.wav,(someone cooked here),Pop Culture & Media,"Breaking Bad, Walter White, Impressed, Respect","Male, Adult"
+Custom Sound,sorry bro - whisper.wav,(sorry bro - whisper),Human Vocals,"Secret, Quiet, Apology, Awkward",Male
+Custom Sound,sorry-sorry-sorry.wav,(sorry-sorry-sorry),Human Vocals,"Apologetic, Fast, Nervous, Clumsy",
+Custom Sound,sound_list.txt,(sound_list),SFX & UI,"System, Blank, Technical",N/A
+Custom Sound,sounds a little gay.wav,(sounds a little gay),Pop Culture & Media,"South Park, Judgmental, Out of Context","Male, Child"
+Custom Sound,sparkles.wav,(sparkles),SFX & UI,"Magic, Chime, Bright, Shimmer, Ding",N/A
+Custom Sound,spectacular gimme4.wav,(spectacular gimme4),Internet & Memes,"TikTok, Trend, Over the Top, Hype",
+Custom Sound,squeaky toy.wav,(squeaky toy),SFX & UI,"Dog, Pet, High Pitch, Funny, Cute",N/A
+Custom Sound,stfu asshole - kid.wav,(stfu asshole - kid),Human Vocals,"Aggressive, Rude, Child Swearing, Toxic",Child
+Custom Sound,stop doing this.wav,(stop doing this),Human Vocals,"Pleading, Annoyed, Frustrated, Stop",
+Custom Sound,Suck My Dick N.wav,(Suck My Dick N),Human Vocals,"Aggressive, Insult, Swear, Toxic",Male
+Custom Sound,suck my dick.wav,(suck my dick),Human Vocals,"Aggressive, Angry, Insult, Swear",
+Custom Sound,sudden suspense.wav,(sudden suspense),Music Cues,"Dun Dun Dun, Shocked, Plot Twist, Reveal",N/A
+Custom Sound,surprise shawty.wav,(surprise shawty),Internet & Memes,"Viral, Surprise Entrance, Hype, Urban",Male
+Custom Sound,surprise-mf.wav,(surprise-mf),Pop Culture & Media,"Dexter, Doakes, Gotcha, Caught, Aggressive","Male, Adult"
+Custom Sound,ta da.wav,(ta da),SFX & UI,"Fanfare, Achievement, Finished, Reveal",N/A
+Custom Sound,taco bell.wav,(taco bell),SFX & UI,"Bong, Bell, Food, Meme, Impact",N/A
+Custom Sound,take a nap.wav,(take a nap),Human Vocals,"Tired, Dismissive, Calm Down",
+Custom Sound,tell me it was good.wav,(tell me it was good),Human Vocals,"Suggestive, Seeking Approval, Out of Context",
+Custom Sound,thank you come again.wav,(thank you come again),Pop Culture & Media,"The Simpsons, Apu, Retail, Polite, Accent","Male, Adult"
+Custom Sound,that bitch is dead.wav,(that bitch is dead),Pop Culture & Media,"Drama, Aggressive, Threat, Cold",
+Custom Sound,that guys gonna blow himself up.wav,(that guys gonna blow himself up),Pop Culture & Media,"Warning, Danger, Out of Context",
+Custom Sound,that i absolutely love.wav,(that i absolutely love),Human Vocals,"Passionate, Approval, Obsessed",
+Custom Sound,that was fn scary.wav,(that was fn scary),Human Vocals,"Relief, Shocked, Terrified, Swear",
+Custom Sound,that was totally wicked - incredibles kid.wav,(that was totally wicked - incredibles kid),Pop Culture & Media,"The Incredibles, Boy on Tricycle, Impressed, Hype","Male, Child"
+Custom Sound,thats my shiiii.wav,(thats my shiiii),Internet & Memes,"Hype, Favorite, Love It, Jamming",
+Custom Sound,thats suspicious.wav,(thats suspicious),Internet & Memes,"Cardi B, Sketchy, Question, Drama, TikTok","Female, Adult"
+Custom Sound,thats what she said.wav,(thats what she said),Pop Culture & Media,"The Office, Michael Scott, Joke, Sus, Innuendo","Male, Adult"
+Custom Sound,the light inside me is dying.wav,(the light inside me is dying),Internet & Memes,"Depressed, Sad, Relatable, Exhausted",
+Custom Sound,theyre very aroused.wav,(theyre very aroused),Pop Culture & Media,"Out of Context, Suggestive, Hilarious",
+Custom Sound,troll_toll.wav,(troll_toll),Pop Culture & Media,"Always Sunny, Danny DeVito, Frank, Singing, Musical","Male, Adult"
+Custom Sound,um actually.wav,(um actually),Internet & Memes,"Nerdy, Smartass, Correcting, Pedantic",
+Custom Sound,vroom.wav,(vroom),SFX & UI,"Car, Engine, Fast, Racing",N/A
+Custom Sound,wah wah - charlie brown.wav,(wah wah - charlie brown),Pop Culture & Media,"Charlie Brown, Teacher, Muffled, Boring, Talking",N/A
+Custom Sound,wait a minute.wav,(wait a minute),Internet & Memes,"Pause, Realization, Holup",
+Custom Sound,Wait WHAT.wav,(Wait WHAT),Human Vocals,"Shocked, Disbelief, Loud, Plot Twist",
+Custom Sound,wakin up in the morning.wav,(wakin up in the morning),Pop Culture & Media,"Real Housewives, Gia Giudice, Sad, TikTok, Relatable","Female, Child"
+Custom Sound,wassup take me out to dinner.wav,(wassup take me out to dinner),Internet & Memes,"TikTok, Date, Flirty, Direct",Male
+Custom Sound,watching you bitch - die tonight.wav,(watching you bitch - die tonight),Pop Culture & Media,"Aggressive, Threat, Horror, Toxic",
+Custom Sound,wazzup.wav,(wazzup),Pop Culture & Media,"Budweiser, Scary Movie, Tongue Out, Hype, Loud","Group, Males"
+Custom Sound,we do not care.wav,(we do not care),Internet & Memes,"Mike Tomlin, Dismissive, Blunt, Cold","Male, Adult"
+Custom Sound,weee.wav,(weee),Human Vocals,"High Energy, Slide, Rollercoaster, Goofy",
+Custom Sound,what - liljohn.wav,(what - liljohn),Pop Culture & Media,"Lil Jon, Rap, Hype, Confused, Loud","Male, Adult"
+Custom Sound,what are you waiting for - incredibles.wav,(what are you waiting for - incredibles),Pop Culture & Media,"The Incredibles, Kid on Tricycle, Impressed, Staring","Male, Child"
+Custom Sound,what happened - you you didnt used to.wav,(what happened - you you didnt used to),Pop Culture & Media,"Disappointment, Sad, Change, Drama",
+Custom Sound,what the dog doin.wav,(what the dog doin),Internet & Memes,"Viral, Dog, Curious, Random","Male, Adult"
+Custom Sound,what the fuck - brian.wav,(what the fuck - brian),Pop Culture & Media,"Family Guy, Brian, Shocked, Aggressive, Swear","Male, Dog"
+Custom Sound,what the hell is that.wav,(what the hell is that),Human Vocals,"Shocked, Disgusted, Confused, Loud",
+Custom Sound,what the hellllllll.wav,(what the hellllllll),Internet & Memes,"TikTok, Singing, Shocked, Dragged Out","Male, Adult"
+Custom Sound,what was the reason.wav,(what was the reason),Internet & Memes,"Cardi B, Screaming, Drama, Demanding, Viral","Female, Adult"
+Custom Sound,whatchu doin - all that ass.wav,(whatchu doin - all that ass),Internet & Memes,"Rap, Suggestive, Flirty, Slang",Male
+Custom Sound,whateva i do what i want - cartman.wav,(whateva i do what i want - cartman),Pop Culture & Media,"South Park, Cartman, Defiant, Bratty","Male, Child"
+Custom Sound,whatever you bitch.wav,(whatever you bitch),Human Vocals,"Dismissive, Insult, Rude, Swear",
+Custom Sound,whats this.wav,(whats this),Pop Culture & Media,"Nightmare Before Christmas, Jack Skellington, Curious",Male
+Custom Sound,whats up bitches.wav,(whats up bitches),Pop Culture & Media,"Arrival, Bold, Hype, Greeting, Swear",
+Custom Sound,whats up doc.wav,(whats up doc),Pop Culture & Media,"Looney Tunes, Bugs Bunny, Casual, Greeting","Male, Rabbit"
+Custom Sound,wheres my money bitch.wav,(wheres my money bitch),Pop Culture & Media,"Breaking Bad, Stewie Vibe, Demanding, Angry",Male
+Custom Sound,wheres the boy.wav,(wheres the boy),Pop Culture & Media,"Drama, Demanding, Searching",
+Custom Sound,whip this bitch in the face.wav,(whip this bitch in the face),Internet & Memes,"Vine, Aggressive, Extreme Sports, Chaos",Male
+Custom Sound,who ARE you.wav,(who ARE you),Human Vocals,"Judgmental, Dismissive, Rude, Question",
+Custom Sound,who the hell cares.wav,(who the hell cares),Pop Culture & Media,"Family Guy, Peter Griffin, Dismissive, Bored, Rude","Male, Adult"
+Custom Sound,whoopsies.wav,(whoopsies),Human Vocals,"Mistake, Sarcastic, Clumsy",
+Custom Sound,why are you gay.wav,(why are you gay),Internet & Memes,"News Interview, Uganda, Blunt, Confused","Male, Adult"
+Custom Sound,why are you running.wav,(why are you running),Internet & Memes,"Nigerian Movie, Shouting, Chase, Panic","Male, Adult"
+Custom Sound,why are you the way that you are.wav,(why are you the way that you are),Pop Culture & Media,"The Office, Michael Scott, Toby, Annoyed, Hopeless","Male, Adult"
+Custom Sound,why is it spicy.wav,(why is it spicy),Internet & Memes,"TikTok, Kid, Cute, Burning, Food",Child
+Custom Sound,WHYY.wav,(WHYY),Human Vocals,"Anguish, Dramatic, Crying, Desperate",
+Custom Sound,womp womp.wav,(womp womp),Internet & Memes,"Mocking, Sad Trombone, Savage, Dismissive, Fail","Male, Adult"
+Custom Sound,woohoo - homer.wav,(woohoo - homer),Pop Culture & Media,"The Simpsons, Homer, Happy, Celebration, Win","Male, Adult"
+Custom Sound,woosh.wav,(woosh),SFX & UI,"Wind, Fast, Missed the Joke, Flying",N/A
+Custom Sound,wouldnt you like to know.wav,(wouldnt you like to know),Internet & Memes,"Weather Boy, Sassy, Kid, Smartass","Male, Child"
+Custom Sound,wtf is that supposed to mean.wav,(wtf is that supposed to mean),Human Vocals,"Defensive, Confused, Argument, Offended",
+Custom Sound,ya jackfaced butthole.wav,(ya jackfaced butthole),Human Vocals,"Safe Insult, Goofy, Childish",
+Custom Sound,yahoo - mario.wav,(yahoo - mario),Pop Culture & Media,"Nintendo, Mario, Jump, Hype, Gaming",Male
+Custom Sound,yeaaah - lil john.wav,(yeaaah - lil john),Pop Culture & Media,"Lil Jon, Rap, Hype, Loud","Male, Adult"
+Custom Sound,yeah boi.wav,(yeah boi),Internet & Memes,"Longest Yeah Boy, Viral, Hype, Celebration","Male, Teens"
+Custom Sound,yep thats me.wav,(yep thats me),Pop Culture & Media,"Movie Intro, Record Scratch, Freeze Frame, Relatable",Male
+Custom Sound,yes - female.wav,(yes - female),Human Vocals,"Agreement, Confirm, Polite",Female
+Custom Sound,ykw hell yeah.wav,(ykw hell yeah),Internet & Memes,"Flavor Flav Vibe, Hype, Agreement, Energetic",Male
+Custom Sound,yooooooooooooooooou.wav,(yooooooooooooooooou),Pop Culture & Media,"Soulja Boy, Crank That, Intro, Hype, Loud","Male, Adult"
+Custom Sound,yoshi tongue.wav,(yoshi tongue),Pop Culture & Media,"Nintendo, Yoshi, Mlem, Eat, Gaming",N/A
+Custom Sound,You bastard!.wav,(You bastard!),Pop Culture & Media,"South Park, Kenny, Angry, Shouting",Male
+Custom Sound,you can run but you cant hide.wav,(you can run but you cant hide),Pop Culture & Media,"Rick and Morty, Scary Terry, Threat, Horror",Male
+Custom Sound,you cant tell me what to do.wav,(you cant tell me what to do),Human Vocals,"Defiant, Bratty, Stubborn",
+Custom Sound,you dont wanna know.wav,(you dont wanna know),Human Vocals,"Warning, Ominous, Secret",
+Custom Sound,you fat bitch.wav,(you fat bitch),Human Vocals,"Aggressive, Direct Insult, Angry, Swear",
+Custom Sound,you get nothing - you lose!.wav,(you get nothing - you lose!),Pop Culture & Media,"Willy Wonka, Gene Wilder, Screaming, Fail, Lose","Male, Adult"
+Custom Sound,you know what it is bitch.wav,(you know what it is bitch),Internet & Memes,"Vine, Sassy, Threat, Attitude",Female
+Custom Sound,you my boo.wav,(you my boo),Internet & Memes,"Affectionate, Cute, R&B Vibe",
+Custom Sound,you poked my heart.wav,(you poked my heart),Internet & Memes,"Viral, Kid Argument, Cute, Dramatic, Hurt","Female, Child"
+Custom Sound,you wanna know something.wav,(you wanna know something),Human Vocals,"Secret, Whisper, Announcement",
+Custom Sound,your breath is dog shit.wav,(your breath is dog shit),Pop Culture & Media,"Step Brothers, Direct Insult, Gross, Blunt","Male, Adult"
+Custom Sound,youre cheap.wav,(youre cheap),Pop Culture & Media,"The Room, Tommy Wiseau, Drama, Melodramatic","Male, Adult"
+Custom Sound,youre coming home with me.wav,(youre coming home with me),Human Vocals,"Kidnapping Vibe, Threat, Out of Context",
+Custom Sound,youre goddamn right.wav,(youre goddamn right),Pop Culture & Media,"Breaking Bad, Walter White, Heisenberg, Alpha","Male, Adult"
+Custom Sound,youre so stupid.wav,(youre so stupid),Human Vocals,"Insult, Mean, Judgmental",
+Custom Sound,youre welcome.wav,(youre welcome),Human Vocals,"Polite, Sarcastic, Finished",
+Custom Sound,youths.wav,(youths),Pop Culture & Media,"New Girl, Schmidt, Judgmental, Annoyed","Male, Adult"
+Custom Sound,youuuu - soulja boy.wav,(youuuu - soulja boy),Pop Culture & Media,"Soulja Boy, Hype, Classic Meme","Male, Adult"
