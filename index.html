@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>What the Dub? Soundboard</title>
-    <!-- Include PapaParse to read the CSV file directly -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
     <style>
         :root {
             --bg-color: #121212;
@@ -14,7 +15,7 @@
             --text-color: #ffffff;
             --muted-text: #a4b0be;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -40,7 +41,7 @@
             position: sticky;
             top: 0;
             background-color: var(--bg-color);
-            padding: 5px 0 15px 0;
+            padding: 5px 0 15px;
             z-index: 10;
         }
 
@@ -155,103 +156,123 @@
 </head>
 <body>
 
-    <div id="toast" class="toast">Copied to Clipboard!</div>
+<div id="toast" class="toast">Copied to Clipboard!</div>
 
-    <header>
-        <h1>DUB HELPER</h1>
-    </header>
+<header>
+    <h1>DUB HELPER</h1>
+</header>
 
-    <div class="search-container">
-        <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search vibe, show, tag..." autocomplete="off">
-    </div>
+<div class="search-container">
+    <input
+        type="text"
+        id="searchBar"
+        class="search-bar"
+        placeholder="🔍 Search vibe, show, tag..."
+        autocomplete="off">
+</div>
 
-    <div class="sound-grid" id="soundGrid"></div>
+<div class="sound-grid" id="soundGrid"></div>
 
-    <div class="footer-bar">
-        <input type="text" id="customInput" class="custom-input" placeholder="Type a custom phrase here...">
-        <button class="copy-btn" id="copyCustomBtn">Copy</button>
-    </div>
+<div class="footer-bar">
+    <input
+        type="text"
+        id="customInput"
+        class="custom-input"
+        placeholder="Type a custom phrase here...">
+    <button class="copy-btn" id="copyCustomBtn">Copy</button>
+</div>
 
-    <script>
-        let MASTER_SOUNDS = [];
-        const grid = document.getElementById('soundGrid');
-        const searchBar = document.getElementById('searchBar');
+<script>
+let MASTER_SOUNDS = [];
 
-        // 1. Fetch and Parse the CSV File Directly
-        function loadCSVData() {
-            Papa.parse("Untitled spreadsheet - Sheet1.csv", {
-                download: true,
-                header: true, // Uses your exact column names
-                skipEmptyLines: true,
-                complete: function(results) {
-                    MASTER_SOUNDS = results.data.filter(row => row['Text to Paste']);
-                    renderGrid(MASTER_SOUNDS);
-                },
-                error: function(err) {
-                    grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; color:red; padding:20px;">
-                        Make sure 'Untitled spreadsheet - Sheet1.csv' is in this same folder!
-                    </div>`;
-                }
-            });
+const grid = document.getElementById('soundGrid');
+const searchBar = document.getElementById('searchBar');
+
+const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQgPRFxM2ZRPkuL0uLRkDnhbtP44ZSo-z-VGJsMrlvBZlAEqd32KSaaS5ZnwVgbWumfu1Wzo3BzzAu/pub?gid=0&single=true&output=csv";
+
+function loadCSVData() {
+    Papa.parse(CSV_URL, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            MASTER_SOUNDS = results.data.filter(row => row["Text to Paste"]);
+            renderGrid(MASTER_SOUNDS);
+        },
+        error: function(err) {
+            console.error(err);
+            grid.innerHTML = `
+                <div style="grid-column:1/-1;text-align:center;color:#ff6b6b;padding:20px;">
+                    Unable to load the Google Sheet.
+                </div>
+            `;
         }
+    });
+}
 
-        // 2. Render UI Cards
-        function renderGrid(data) {
-            grid.innerHTML = '';
-            data.forEach(item => {
-                // Maps your column layout dynamically
-                const phrase = item['Text to Paste'];
-                const category = item['Category'] || item['Type'] || '';
+function renderGrid(data) {
+    grid.innerHTML = "";
 
-                const card = document.createElement('div');
-                card.className = 'sound-card';
-                card.onclick = () => copyText(phrase);
-                
-                const textEl = document.createElement('div');
-                textEl.className = 'sound-text';
-                textEl.textContent = phrase;
-                
-                const metaEl = document.createElement('div');
-                metaEl.className = 'sound-meta';
-                metaEl.textContent = category;
-                
-                card.appendChild(textEl);
-                card.appendChild(metaEl);
-                grid.appendChild(card);
-            });
-        }
+    data.forEach(item => {
+        const phrase = item["Text to Paste"];
+        const category = item["Category"] || item["Type"] || "";
 
-        // 3. Live Filtering Search Logic
-        searchBar.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            if (!query) {
-                renderGrid(MASTER_SOUNDS);
-                return;
-            }
-            const filtered = MASTER_SOUNDS.filter(item => {
-                const text = (item['Text to Paste'] || '').toLowerCase();
-                const keywords = (item['Vibe / Keywords'] || '').toLowerCase();
-                const category = (item['Category'] || '').toLowerCase();
-                return text.includes(query) || keywords.includes(query) || category.includes(query);
-            });
-            renderGrid(filtered);
-        });
+        const card = document.createElement("div");
+        card.className = "sound-card";
+        card.onclick = () => copyText(phrase);
 
-        // 4. Clipboard Copy Routines
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 1500);
-            });
-        }
+        const textEl = document.createElement("div");
+        textEl.className = "sound-text";
+        textEl.textContent = phrase;
 
-        document.getElementById('copyCustomBtn').onclick = () => {
-            const val = document.getElementById('customInput').value.trim();
-            if (val) copyText(val);
-        };
+        const metaEl = document.createElement("div");
+        metaEl.className = "sound-meta";
+        metaEl.textContent = category;
 
-        window.onload = loadCSVData;
-    </script>
+        card.appendChild(textEl);
+        card.appendChild(metaEl);
+        grid.appendChild(card);
+    });
+}
+
+searchBar.addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase().trim();
+
+    if (!query) {
+        renderGrid(MASTER_SOUNDS);
+        return;
+    }
+
+    const filtered = MASTER_SOUNDS.filter(item => {
+        const text = (item["Text to Paste"] || "").toLowerCase();
+        const keywords = (item["Vibe / Keywords"] || "").toLowerCase();
+        const category = (item["Category"] || "").toLowerCase();
+
+        return (
+            text.includes(query) ||
+            keywords.includes(query) ||
+            category.includes(query)
+        );
+    });
+
+    renderGrid(filtered);
+});
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1500);
+    });
+}
+
+document.getElementById("copyCustomBtn").onclick = () => {
+    const val = document.getElementById("customInput").value.trim();
+    if (val) copyText(val);
+};
+
+window.onload = loadCSVData;
+</script>
+
 </body>
 </html>
