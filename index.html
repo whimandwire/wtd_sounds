@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>What the Dub? Soundboard</title>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-
     <style>
         :root {
             --bg-color: #121212;
@@ -15,264 +13,129 @@
             --text-color: #ffffff;
             --muted-text: #a4b0be;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             padding: 15px;
-            padding-bottom: 80px;
+            padding-bottom: 90px; /* Space for the persistent input bar */
         }
 
-        header h1 {
-            font-size: 1.4rem;
-            text-align: center;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
+        header h1 { font-size: 1.4rem; text-align: center; color: var(--accent-color); margin-bottom: 10px; }
 
-        .search-container {
-            position: sticky;
-            top: 0;
-            background-color: var(--bg-color);
-            padding: 5px 0 15px;
-            z-index: 10;
-        }
+        .search-container { position: sticky; top: 0; background-color: var(--bg-color); padding: 5px 0 15px 0; z-index: 10; }
+        .search-bar { width: 100%; padding: 14px; border-radius: 12px; border: 2px solid #333; background-color: var(--card-bg); color: var(--text-color); font-size: 1rem; outline: none; }
+        .search-bar:focus { border-color: var(--accent-color); }
 
-        .search-bar {
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            border: 2px solid #333;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            font-size: 1rem;
-            outline: none;
+        .sound-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+        .sound-card { 
+            background-color: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px 8px; 
+            text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 75px; 
         }
+        .sound-card:active { transform: scale(0.95); background-color: #2a2a2a; }
+        .sound-text { font-size: 0.9rem; font-weight: 600; word-break: break-word; margin-bottom: 4px; }
+        .sound-meta { font-size: 0.65rem; color: var(--muted-text); text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .search-bar:focus {
-            border-color: var(--accent-color);
-        }
-
-        .toast {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-100px);
-            background-color: #2ed573;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            z-index: 100;
-            transition: transform 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .sound-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-            gap: 10px;
-        }
-
-        .sound-card {
-            background-color: var(--card-bg);
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            padding: 12px 8px;
-            text-align: center;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 75px;
-        }
-
-        .sound-card:active {
-            transform: scale(0.95);
-            background-color: #2a2a2a;
-        }
-
-        .sound-text {
-            font-size: 0.9rem;
-            font-weight: 600;
-            word-break: break-word;
-            margin-bottom: 4px;
-        }
-
-        .sound-meta {
-            font-size: 0.65rem;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
+        /* Persistent Bottom Bar */
         .footer-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--card-bg);
-            padding: 12px 15px;
-            border-top: 1px solid #333;
-            display: flex;
-            gap: 10px;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
-            z-index: 20;
+            position: fixed; bottom: 0; left: 0; right: 0; background-color: var(--card-bg); 
+            padding: 12px 15px; border-top: 1px solid #333; display: flex; gap: 10px; box-shadow: 0 -4px 15px rgba(0,0,0,0.5); z-index: 20;
         }
-
-        .custom-input {
-            flex-grow: 1;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #444;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-size: 0.95rem;
-        }
-
-        .copy-btn {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+        .custom-input { flex-grow: 1; padding: 10px; border-radius: 8px; border: 1px solid #444; background-color: var(--bg-color); color: var(--text-color); font-size: 1rem; }
+        .copy-btn { background-color: #2ed573; color: white; border: none; padding: 0 18px; border-radius: 8px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-<div id="toast" class="toast">Copied to Clipboard!</div>
+    <header><h1>DUB HELPER</h1></header>
 
-<header>
-    <h1>DUB HELPER</h1>
-</header>
+    <div class="search-container">
+        <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search sounds or tags..." autocomplete="off">
+    </div>
 
-<div class="search-container">
-    <input
-        type="text"
-        id="searchBar"
-        class="search-bar"
-        placeholder="🔍 Search vibe, show, tag..."
-        autocomplete="off">
-</div>
+    <div class="sound-grid" id="soundGrid"></div>
 
-<div class="sound-grid" id="soundGrid"></div>
+    <div class="footer-bar">
+        <input type="text" id="customInput" class="custom-input" placeholder="Your final text..." autocomplete="off">
+        <button class="copy-btn" id="copyAllBtn">Copy</button>
+    </div>
 
-<div class="footer-bar">
-    <input
-        type="text"
-        id="customInput"
-        class="custom-input"
-        placeholder="Type a custom phrase here...">
-    <button class="copy-btn" id="copyCustomBtn">Copy</button>
-</div>
+    <script>
+        let MASTER_SOUNDS = [];
+        const grid = document.getElementById('soundGrid');
+        const searchBar = document.getElementById('searchBar');
+        const customInput = document.getElementById('customInput');
 
-<script>
-let MASTER_SOUNDS = [];
-
-const grid = document.getElementById('soundGrid');
-const searchBar = document.getElementById('searchBar');
-
-const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQgPRFxM2ZRPkuL0uLRkDnhbtP44ZSo-z-VGJsMrlvBZlAEqd32KSaaS5ZnwVgbWumfu1Wzo3BzzAu/pub?gid=0&single=true&output=csv";
-
-function loadCSVData() {
-    Papa.parse(CSV_URL, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-            MASTER_SOUNDS = results.data.filter(row => row["Text to Paste"]);
-            renderGrid(MASTER_SOUNDS);
-        },
-        error: function(err) {
-            console.error(err);
-            grid.innerHTML = `
-                <div style="grid-column:1/-1;text-align:center;color:#ff6b6b;padding:20px;">
-                    Unable to load the Google Sheet.
-                </div>
-            `;
+        // 1. Pull dynamically from your Google Sheet CSV link
+        function loadSheetData() {
+            const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQgPRFxM2ZRPkuL0uLRkDnhbtP44ZSo-z-VGJsMrlvBZlAEqd32KSaaS5ZnwVgbWumfu1Wzo3BzzAu/pub?gid=0&single=true&output=csv";
+            
+            Papa.parse(sheetUrl, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    MASTER_SOUNDS = results.data.filter(row => row['Text to Paste']);
+                    renderGrid(MASTER_SOUNDS);
+                }
+            });
         }
-    });
-}
 
-function renderGrid(data) {
-    grid.innerHTML = "";
+        // 2. Insert text at cursor position in the input box
+        function insertAtCursor(text) {
+            const input = customInput;
+            const start = input.selectionStart;
+            const end = input.selectionEnd;
+            const val = input.value;
+            
+            // Insert the sound text with a trailing space for convenience
+            input.value = val.substring(0, start) + text + " " + val.substring(end);
+            
+            // Move cursor to end of the newly inserted text
+            input.focus();
+            const newPos = start + text.length + 1;
+            input.setSelectionRange(newPos, newPos);
+        }
 
-    data.forEach(item => {
-        const phrase = item["Text to Paste"];
-        const category = item["Category"] || item["Type"] || "";
+        function renderGrid(data) {
+            grid.innerHTML = '';
+            data.forEach(item => {
+                const phrase = item['Text to Paste'];
+                const card = document.createElement('div');
+                card.className = 'sound-card';
+                card.onclick = () => insertAtCursor(phrase);
+                
+                card.innerHTML = `
+                    <div class="sound-text">${phrase}</div>
+                    <div class="sound-meta">${item['Category'] || ''}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
 
-        const card = document.createElement("div");
-        card.className = "sound-card";
-        card.onclick = () => copyText(phrase);
+        // 3. Search and filter logic
+        searchBar.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            const filtered = MASTER_SOUNDS.filter(item => {
+                return (item['Text to Paste'] || '').toLowerCase().includes(query) || 
+                       (item['Vibe / Keywords'] || '').toLowerCase().includes(query) || 
+                       (item['Category'] || '').toLowerCase().includes(query);
+            });
+            renderGrid(filtered);
+        });
 
-        const textEl = document.createElement("div");
-        textEl.className = "sound-text";
-        textEl.textContent = phrase;
+        // 4. Final copy button
+        document.getElementById('copyAllBtn').onclick = () => {
+            if (customInput.value) {
+                navigator.clipboard.writeText(customInput.value.trim());
+                customInput.style.borderColor = "#2ed573";
+                setTimeout(() => customInput.style.borderColor = "#444", 1000);
+            }
+        };
 
-        const metaEl = document.createElement("div");
-        metaEl.className = "sound-meta";
-        metaEl.textContent = category;
-
-        card.appendChild(textEl);
-        card.appendChild(metaEl);
-        grid.appendChild(card);
-    });
-}
-
-searchBar.addEventListener("input", (e) => {
-    const query = e.target.value.toLowerCase().trim();
-
-    if (!query) {
-        renderGrid(MASTER_SOUNDS);
-        return;
-    }
-
-    const filtered = MASTER_SOUNDS.filter(item => {
-        const text = (item["Text to Paste"] || "").toLowerCase();
-        const keywords = (item["Vibe / Keywords"] || "").toLowerCase();
-        const category = (item["Category"] || "").toLowerCase();
-
-        return (
-            text.includes(query) ||
-            keywords.includes(query) ||
-            category.includes(query)
-        );
-    });
-
-    renderGrid(filtered);
-});
-
-function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById("toast");
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 1500);
-    });
-}
-
-document.getElementById("copyCustomBtn").onclick = () => {
-    const val = document.getElementById("customInput").value.trim();
-    if (val) copyText(val);
-};
-
-window.onload = loadCSVData;
-</script>
-
+        window.onload = loadSheetData;
+    </script>
 </body>
 </html>
