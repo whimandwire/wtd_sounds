@@ -92,6 +92,10 @@
         .sound-meta { font-size: 0.62rem; color: var(--muted-text); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
         .sound-tags { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; }
         .sound-tag-pill { font-size: 0.6rem; background-color: rgba(255,255,255,0.06); color: var(--muted-text); padding: 1px 6px; border-radius: 999px; }
+        .variations-badge {
+            position: absolute; top: 6px; right: 8px; font-size: 0.7rem; opacity: 0.85;
+        }
+        .sound-card { position: relative; }
 
         .empty-state { text-align: center; color: var(--muted-text); padding: 40px 10px; font-size: 0.9rem; }
 
@@ -139,6 +143,11 @@
                     <input type="text" id="sourceSearch" class="mini-search" placeholder="Search sources...">
                     <div class="chip-row" id="sourceChips"></div>
                 </div>
+                <div>
+                    <div class="filter-group-label">Character</div>
+                    <input type="text" id="characterSearch" class="mini-search" placeholder="Search characters...">
+                    <div class="chip-row" id="characterChips"></div>
+                </div>
                 <button class="clear-filters-btn" id="clearFiltersBtn">Clear all filters</button>
             </div>
         </div>
@@ -158,6 +167,7 @@
         const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQgPRFxM2ZRPkuL0uLRkDnhbtP44ZSo-z-VGJsMrlvBZlAEqd32KSaaS5ZnwVgbWumfu1Wzo3BzzAu/pub?gid=0&single=true&output=csv";
         const TOP_TAG_CHIP_COUNT = 24;   // how many tag chips show by default (before searching)
         const TOP_SOURCE_CHIP_COUNT = 18;
+        const TOP_CHARACTER_CHIP_COUNT = 18;
 
         const CATEGORY_COLORS = {
             "Pop Culture & Media": "var(--cat-pop)",
@@ -169,7 +179,7 @@
         };
 
         let MASTER_SOUNDS = [];
-        let ALL_CATEGORIES = [], ALL_GENDERS = [], ALL_AGES = [], ALL_TAGS = [], ALL_SOURCES = [];
+        let ALL_CATEGORIES = [], ALL_GENDERS = [], ALL_AGES = [], ALL_TAGS = [], ALL_SOURCES = [], ALL_CHARACTERS = [];
 
         const state = {
             search: "",
@@ -177,7 +187,8 @@
             genders: new Set(),
             ages: new Set(),
             tags: new Set(),
-            sources: new Set()
+            sources: new Set(),
+            characters: new Set()
         };
 
         const grid = document.getElementById('soundGrid');
@@ -221,9 +232,11 @@
                         category: findKey(fields, ['category']),
                         tags: findKey(fields, ['tags', 'vibe / keywords', 'vibe/keywords']),
                         source: findKey(fields, ['source / reference', 'source/reference', 'source']),
+                        character: findKey(fields, ['character']),
                         gender: findKey(fields, ['speaker gender']),
                         age: findKey(fields, ['speaker age']),
-                        type: findKey(fields, ['type'])
+                        type: findKey(fields, ['type']),
+                        variations: findKey(fields, ['has variations'])
                     };
 
                     MASTER_SOUNDS = results.data
@@ -234,9 +247,11 @@
                             category: K.category ? (row[K.category] || '') : '',
                             tags: K.tags ? splitList(row[K.tags]) : [],
                             source: K.source ? (row[K.source] || '') : '',
-                            gender: K.gender ? (row[K.gender] || '') : '',
+                            character: K.character ? (row[K.character] || '') : '',
+                            genders: K.gender ? splitList(row[K.gender]) : [],
                             age: K.age ? (row[K.age] || '') : '',
-                            type: K.type ? (row[K.type] || '') : ''
+                            type: K.type ? (row[K.type] || '') : '',
+                            hasVariations: K.variations ? /^y/i.test(row[K.variations] || '') : false
                         }));
 
                     buildFacets();
@@ -250,14 +265,17 @@
         }
 
         function buildFacets() {
-            const catCount = {}, genCount = {}, ageCount = {}, tagCount = {}, srcCount = {};
+            const catCount = {}, genCount = {}, ageCount = {}, tagCount = {}, srcCount = {}, charCount = {};
             MASTER_SOUNDS.forEach(item => {
                 if (item.category) catCount[item.category] = (catCount[item.category] || 0) + 1;
-                if (item.gender) genCount[item.gender] = (genCount[item.gender] || 0) + 1;
+                item.genders.forEach(g => genCount[g] = (genCount[g] || 0) + 1);
                 if (item.age) ageCount[item.age] = (ageCount[item.age] || 0) + 1;
                 item.tags.forEach(t => tagCount[t] = (tagCount[t] || 0) + 1);
                 if (item.source) {
                     item.source.split(',').map(s => s.trim()).filter(Boolean).forEach(s => srcCount[s] = (srcCount[s] || 0) + 1);
+                }
+                if (item.character) {
+                    item.character.split(',').map(s => s.trim()).filter(Boolean).forEach(s => charCount[s] = (charCount[s] || 0) + 1);
                 }
             });
             const sortByCount = (obj) => Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
@@ -266,9 +284,11 @@
             ALL_AGES = sortByCount(ageCount);
             ALL_TAGS = sortByCount(tagCount);
             ALL_SOURCES = sortByCount(srcCount);
+            ALL_CHARACTERS = sortByCount(charCount);
 
             window._tagCount = tagCount;
             window._srcCount = srcCount;
+            window._charCount = charCount;
         }
 
         function makeChip(container, label, group, count) {
@@ -296,6 +316,7 @@
 
             renderTagChips();
             renderSourceChips();
+            renderCharacterChips();
             renderActiveChipRow();
             updateFilterBadge();
         }
@@ -329,9 +350,23 @@
             list.forEach(s => makeChip(srcBox, s, 'sources', window._srcCount[s]));
         }
 
+        function renderCharacterChips() {
+            const charBox = document.getElementById('characterChips'); charBox.innerHTML = '';
+            const query = document.getElementById('characterSearch').value.trim().toLowerCase();
+            let list = ALL_CHARACTERS;
+            if (query) {
+                list = ALL_CHARACTERS.filter(c => c.toLowerCase().includes(query));
+            } else {
+                const top = ALL_CHARACTERS.slice(0, TOP_CHARACTER_CHIP_COUNT);
+                const active = ALL_CHARACTERS.filter(c => state.characters.has(c) && !top.includes(c));
+                list = [...top, ...active];
+            }
+            list.forEach(c => makeChip(charBox, c, 'characters', window._charCount[c]));
+        }
+
         function renderActiveChipRow() {
             activeChipRow.innerHTML = '';
-            const groups = ['categories', 'genders', 'ages', 'tags', 'sources'];
+            const groups = ['categories', 'genders', 'ages', 'tags', 'sources', 'characters'];
             groups.forEach(g => {
                 state[g].forEach(val => {
                     const chip = document.createElement('div');
@@ -348,7 +383,7 @@
         }
 
         function updateFilterBadge() {
-            const total = state.categories.size + state.genders.size + state.ages.size + state.tags.size + state.sources.size;
+            const total = state.categories.size + state.genders.size + state.ages.size + state.tags.size + state.sources.size + state.characters.size;
             filterCountBadge.style.display = total > 0 ? 'flex' : 'none';
             filterCountBadge.textContent = total;
             filterToggleBtn.classList.toggle('has-active', total > 0);
@@ -373,8 +408,10 @@
                 card.onclick = () => insertAtCursor(item.text);
 
                 const tagsHtml = item.tags.slice(0, 3).map(t => `<span class="sound-tag-pill">${t}</span>`).join('');
+                const varBadge = item.hasVariations ? '<span class="variations-badge" title="Plays a random variation each time">🎲</span>' : '';
 
                 card.innerHTML = `
+                    ${varBadge}
                     <div class="sound-text">${item.text}</div>
                     <div class="sound-meta">${item.category || ''}</div>
                     <div class="sound-tags">${tagsHtml}</div>
@@ -388,11 +425,14 @@
             const query = state.search;
             const filtered = MASTER_SOUNDS.filter(item => {
                 if (query) {
-                    const haystack = [item.text, item.fullText, item.category, item.source, item.tags.join(' ')].join(' ').toLowerCase();
+                    const haystack = [item.text, item.fullText, item.category, item.source, item.character, item.tags.join(' ')].join(' ').toLowerCase();
                     if (!haystack.includes(query)) return false;
                 }
                 if (state.categories.size && !state.categories.has(item.category)) return false;
-                if (state.genders.size && !state.genders.has(item.gender)) return false;
+                if (state.genders.size) {
+                    const has = item.genders.some(g => state.genders.has(g));
+                    if (!has) return false;
+                }
                 if (state.ages.size && !state.ages.has(item.age)) return false;
                 if (state.tags.size) {
                     const has = [...state.tags].some(t => item.tags.includes(t));
@@ -401,6 +441,11 @@
                 if (state.sources.size) {
                     const itemSources = item.source.split(',').map(s => s.trim());
                     const has = [...state.sources].some(s => itemSources.includes(s));
+                    if (!has) return false;
+                }
+                if (state.characters.size) {
+                    const itemChars = item.character.split(',').map(s => s.trim());
+                    const has = [...state.characters].some(c => itemChars.includes(c));
                     if (!has) return false;
                 }
                 return true;
@@ -432,11 +477,13 @@
 
         document.getElementById('tagSearch').addEventListener('input', renderTagChips);
         document.getElementById('sourceSearch').addEventListener('input', renderSourceChips);
+        document.getElementById('characterSearch').addEventListener('input', renderCharacterChips);
 
         document.getElementById('clearFiltersBtn').addEventListener('click', () => {
-            state.categories.clear(); state.genders.clear(); state.ages.clear(); state.tags.clear(); state.sources.clear();
+            state.categories.clear(); state.genders.clear(); state.ages.clear(); state.tags.clear(); state.sources.clear(); state.characters.clear();
             document.getElementById('tagSearch').value = '';
             document.getElementById('sourceSearch').value = '';
+            document.getElementById('characterSearch').value = '';
             renderFilterChips();
             applyFilters();
         });
