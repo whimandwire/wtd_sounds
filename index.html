@@ -9,12 +9,20 @@
         :root {
             --bg-color: #121212;
             --card-bg: #1e1e1e;
+            --chip-bg: #262626;
             --accent-color: #ff4757;
             --text-color: #ffffff;
             --muted-text: #a4b0be;
+            --cat-pop: #ff4757;
+            --cat-human: #ffa502;
+            --cat-internet: #7bed9f;
+            --cat-sfx: #70a1ff;
+            --cat-music: #eccc68;
+            --cat-crowd: #ff6b81;
+            --cat-other: #a4b0be;
         }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
 
         body {
             background-color: var(--bg-color);
@@ -23,110 +31,421 @@
             padding-bottom: 90px; /* Space for the persistent input bar */
         }
 
-        header h1 { font-size: 1.4rem; text-align: center; color: var(--accent-color); margin-bottom: 10px; }
+        header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; }
+        header h1 { font-size: 1.4rem; text-align: center; color: var(--accent-color); }
+        #resultCount { font-size: 0.75rem; color: var(--muted-text); text-align: center; margin-bottom: 10px; }
 
-        .search-container { position: sticky; top: 0; background-color: var(--bg-color); padding: 5px 0 15px 0; z-index: 10; }
-        .search-bar { width: 100%; padding: 14px; border-radius: 12px; border: 2px solid #333; background-color: var(--card-bg); color: var(--text-color); font-size: 1rem; outline: none; }
+        .search-container { position: sticky; top: 0; background-color: var(--bg-color); padding: 5px 0 10px 0; z-index: 10; }
+        .search-row { display: flex; gap: 8px; }
+        .search-bar { flex-grow: 1; width: 100%; padding: 14px; border-radius: 12px; border: 2px solid #333; background-color: var(--card-bg); color: var(--text-color); font-size: 1rem; outline: none; }
         .search-bar:focus { border-color: var(--accent-color); }
 
-        .sound-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
-        .sound-card { 
-            background-color: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 12px 8px; 
-            text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 75px; 
+        .filter-toggle-btn {
+            position: relative; padding: 0 16px; border-radius: 12px; border: 2px solid #333; background-color: var(--card-bg);
+            color: var(--text-color); font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+        }
+        .filter-toggle-btn.has-active { border-color: var(--accent-color); color: var(--accent-color); }
+        .filter-count-badge {
+            position: absolute; top: -8px; right: -8px; background: var(--accent-color); color: #fff; font-size: 0.65rem;
+            font-weight: 700; border-radius: 999px; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; padding: 0 4px;
+        }
+
+        .filter-panel {
+            max-height: 0; overflow: hidden; transition: max-height 0.25s ease;
+            background-color: var(--card-bg); border-radius: 12px; margin-top: 8px;
+        }
+        .filter-panel.open { max-height: 900px; overflow-y: auto; }
+        .filter-panel-inner { padding: 14px; display: flex; flex-direction: column; gap: 14px; }
+
+        .filter-group-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted-text); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .chip-row { display: flex; flex-wrap: wrap; gap: 6px; max-height: 140px; overflow-y: auto; padding-right: 2px; }
+        .chip {
+            padding: 6px 12px; border-radius: 999px; background-color: var(--chip-bg); border: 1px solid #333;
+            font-size: 0.78rem; color: var(--text-color); cursor: pointer; user-select: none; white-space: nowrap;
+        }
+        .chip.active { background-color: var(--accent-color); border-color: var(--accent-color); color: #fff; font-weight: 600; }
+        .mini-search {
+            width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #333; background-color: var(--bg-color);
+            color: var(--text-color); font-size: 0.8rem; margin-bottom: 8px; outline: none;
+        }
+        .mini-search:focus { border-color: var(--accent-color); }
+
+        .clear-filters-btn {
+            align-self: flex-start; background: none; border: 1px solid var(--accent-color); color: var(--accent-color);
+            padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+        }
+
+        .active-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .active-chip {
+            display: flex; align-items: center; gap: 5px; background-color: rgba(255,71,87,0.15); border: 1px solid var(--accent-color);
+            color: var(--accent-color); padding: 4px 8px 4px 10px; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+        }
+        .active-chip .x { cursor: pointer; font-weight: 900; padding: 0 2px; }
+
+        .sound-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+        .sound-card {
+            background-color: var(--card-bg); border: 1px solid #2a2a2a; border-left: 3px solid var(--cat-other); border-radius: 10px; padding: 12px 8px;
+            text-align: center; cursor: pointer; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 80px;
         }
         .sound-card:active { transform: scale(0.95); background-color: #2a2a2a; }
         .sound-text { font-size: 0.9rem; font-weight: 600; word-break: break-word; margin-bottom: 4px; }
-        .sound-meta { font-size: 0.65rem; color: var(--muted-text); text-transform: uppercase; letter-spacing: 0.5px; }
+        .sound-meta { font-size: 0.62rem; color: var(--muted-text); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .sound-tags { display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; }
+        .sound-tag-pill { font-size: 0.6rem; background-color: rgba(255,255,255,0.06); color: var(--muted-text); padding: 1px 6px; border-radius: 999px; }
+
+        .empty-state { text-align: center; color: var(--muted-text); padding: 40px 10px; font-size: 0.9rem; }
 
         /* Persistent Bottom Bar */
         .footer-bar {
-            position: fixed; bottom: 0; left: 0; right: 0; background-color: var(--card-bg); 
-            padding: 12px 15px; border-top: 1px solid #333; display: flex; gap: 10px; box-shadow: 0 -4px 15px rgba(0,0,0,0.5); z-index: 20;
+            position: fixed; bottom: 0; left: 0; right: 0; background-color: var(--card-bg);
+            padding: 12px 15px; border-top: 1px solid #333; display: flex; gap: 8px; box-shadow: 0 -4px 15px rgba(0,0,0,0.5); z-index: 20;
         }
-        .custom-input { flex-grow: 1; padding: 10px; border-radius: 8px; border: 1px solid #444; background-color: var(--bg-color); color: var(--text-color); font-size: 1rem; }
+        .custom-input { flex-grow: 1; padding: 10px; border-radius: 8px; border: 1px solid #444; background-color: var(--bg-color); color: var(--text-color); font-size: 1rem; min-width: 0; }
+        .clear-btn { background-color: #3a3a3a; color: var(--text-color); border: none; padding: 0 16px; border-radius: 8px; font-weight: bold; cursor: pointer; }
         .copy-btn { background-color: #2ed573; color: white; border: none; padding: 0 18px; border-radius: 8px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <header><h1>DUB HELPER</h1></header>
+    <div id="resultCount"></div>
 
     <div class="search-container">
-        <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search sounds or tags..." autocomplete="off">
+        <div class="search-row">
+            <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search sounds, tags, source..." autocomplete="off">
+            <button class="filter-toggle-btn" id="filterToggleBtn">Filters<span class="filter-count-badge" id="filterCountBadge" style="display:none;">0</span></button>
+        </div>
+        <div class="filter-panel" id="filterPanel">
+            <div class="filter-panel-inner">
+                <div>
+                    <div class="filter-group-label">Category</div>
+                    <div class="chip-row" id="categoryChips"></div>
+                </div>
+                <div>
+                    <div class="filter-group-label">Speaker Gender</div>
+                    <div class="chip-row" id="genderChips"></div>
+                </div>
+                <div>
+                    <div class="filter-group-label">Speaker Age</div>
+                    <div class="chip-row" id="ageChips"></div>
+                </div>
+                <div>
+                    <div class="filter-group-label">Tags</div>
+                    <input type="text" id="tagSearch" class="mini-search" placeholder="Search all tags...">
+                    <div class="chip-row" id="tagChips"></div>
+                </div>
+                <div>
+                    <div class="filter-group-label">Source / Reference</div>
+                    <input type="text" id="sourceSearch" class="mini-search" placeholder="Search sources...">
+                    <div class="chip-row" id="sourceChips"></div>
+                </div>
+                <button class="clear-filters-btn" id="clearFiltersBtn">Clear all filters</button>
+            </div>
+        </div>
+        <div class="active-chip-row" id="activeChipRow"></div>
     </div>
 
     <div class="sound-grid" id="soundGrid"></div>
 
     <div class="footer-bar">
         <input type="text" id="customInput" class="custom-input" placeholder="Your final text..." autocomplete="off">
+        <button class="clear-btn" id="clearInputBtn" title="Clear text box">✕</button>
         <button class="copy-btn" id="copyAllBtn">Copy</button>
     </div>
 
     <script>
+        // ---- CONFIG ----
+        const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQgPRFxM2ZRPkuL0uLRkDnhbtP44ZSo-z-VGJsMrlvBZlAEqd32KSaaS5ZnwVgbWumfu1Wzo3BzzAu/pub?gid=0&single=true&output=csv";
+        const TOP_TAG_CHIP_COUNT = 24;   // how many tag chips show by default (before searching)
+        const TOP_SOURCE_CHIP_COUNT = 18;
+
+        const CATEGORY_COLORS = {
+            "Pop Culture & Media": "var(--cat-pop)",
+            "Human Vocals": "var(--cat-human)",
+            "Internet & Memes": "var(--cat-internet)",
+            "SFX & UI": "var(--cat-sfx)",
+            "Music Cues": "var(--cat-music)",
+            "Crowd & Atmosphere": "var(--cat-crowd)"
+        };
+
         let MASTER_SOUNDS = [];
+        let ALL_CATEGORIES = [], ALL_GENDERS = [], ALL_AGES = [], ALL_TAGS = [], ALL_SOURCES = [];
+
+        const state = {
+            search: "",
+            categories: new Set(),
+            genders: new Set(),
+            ages: new Set(),
+            tags: new Set(),
+            sources: new Set()
+        };
+
         const grid = document.getElementById('soundGrid');
         const searchBar = document.getElementById('searchBar');
         const customInput = document.getElementById('customInput');
+        const resultCount = document.getElementById('resultCount');
+        const filterPanel = document.getElementById('filterPanel');
+        const filterToggleBtn = document.getElementById('filterToggleBtn');
+        const filterCountBadge = document.getElementById('filterCountBadge');
+        const activeChipRow = document.getElementById('activeChipRow');
 
-        // 1. Pull dynamically from your Google Sheet CSV link
+        // ---- Header normalization: tolerant of slightly different column names ----
+        function findKey(fields, candidates) {
+            const lowerFields = fields.map(f => ({ raw: f, low: f.trim().toLowerCase() }));
+            for (const cand of candidates) {
+                const exact = lowerFields.find(f => f.low === cand);
+                if (exact) return exact.raw;
+            }
+            for (const cand of candidates) {
+                const partial = lowerFields.find(f => f.low.includes(cand));
+                if (partial) return partial.raw;
+            }
+            return null;
+        }
+
+        function splitList(str) {
+            if (!str) return [];
+            return str.split(',').map(s => s.trim()).filter(Boolean);
+        }
+
         function loadSheetData() {
-            const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQgPRFxM2ZRPkuL0uLRkDnhbtP44ZSo-z-VGJsMrlvBZlAEqd32KSaaS5ZnwVgbWumfu1Wzo3BzzAu/pub?gid=0&single=true&output=csv";
-            
-            Papa.parse(sheetUrl, {
+            Papa.parse(SHEET_URL, {
                 download: true,
                 header: true,
                 skipEmptyLines: true,
                 complete: function(results) {
-                    MASTER_SOUNDS = results.data.filter(row => row['Text to Paste']);
-                    renderGrid(MASTER_SOUNDS);
+                    const fields = results.meta.fields || [];
+                    const K = {
+                        text: findKey(fields, ['text to paste']),
+                        fullText: findKey(fields, ['full text']),
+                        category: findKey(fields, ['category']),
+                        tags: findKey(fields, ['tags', 'vibe / keywords', 'vibe/keywords']),
+                        source: findKey(fields, ['source / reference', 'source/reference', 'source']),
+                        gender: findKey(fields, ['speaker gender']),
+                        age: findKey(fields, ['speaker age']),
+                        type: findKey(fields, ['type'])
+                    };
+
+                    MASTER_SOUNDS = results.data
+                        .filter(row => K.text && row[K.text])
+                        .map(row => ({
+                            text: row[K.text] || '',
+                            fullText: K.fullText ? (row[K.fullText] || '') : '',
+                            category: K.category ? (row[K.category] || '') : '',
+                            tags: K.tags ? splitList(row[K.tags]) : [],
+                            source: K.source ? (row[K.source] || '') : '',
+                            gender: K.gender ? (row[K.gender] || '') : '',
+                            age: K.age ? (row[K.age] || '') : '',
+                            type: K.type ? (row[K.type] || '') : ''
+                        }));
+
+                    buildFacets();
+                    renderFilterChips();
+                    applyFilters();
+                },
+                error: function() {
+                    grid.innerHTML = '<div class="empty-state">Couldn\'t load the sheet. Check the published CSV link.</div>';
                 }
             });
         }
 
-        // 2. Insert text at cursor position in the input box
+        function buildFacets() {
+            const catCount = {}, genCount = {}, ageCount = {}, tagCount = {}, srcCount = {};
+            MASTER_SOUNDS.forEach(item => {
+                if (item.category) catCount[item.category] = (catCount[item.category] || 0) + 1;
+                if (item.gender) genCount[item.gender] = (genCount[item.gender] || 0) + 1;
+                if (item.age) ageCount[item.age] = (ageCount[item.age] || 0) + 1;
+                item.tags.forEach(t => tagCount[t] = (tagCount[t] || 0) + 1);
+                if (item.source) {
+                    item.source.split(',').map(s => s.trim()).filter(Boolean).forEach(s => srcCount[s] = (srcCount[s] || 0) + 1);
+                }
+            });
+            const sortByCount = (obj) => Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
+            ALL_CATEGORIES = sortByCount(catCount);
+            ALL_GENDERS = sortByCount(genCount);
+            ALL_AGES = sortByCount(ageCount);
+            ALL_TAGS = sortByCount(tagCount);
+            ALL_SOURCES = sortByCount(srcCount);
+
+            window._tagCount = tagCount;
+            window._srcCount = srcCount;
+        }
+
+        function makeChip(container, label, group, count) {
+            const chip = document.createElement('div');
+            chip.className = 'chip' + (state[group].has(label) ? ' active' : '');
+            chip.textContent = count !== undefined ? `${label} (${count})` : label;
+            chip.onclick = () => {
+                if (state[group].has(label)) state[group].delete(label);
+                else state[group].add(label);
+                renderFilterChips();
+                applyFilters();
+            };
+            container.appendChild(chip);
+        }
+
+        function renderFilterChips() {
+            const catBox = document.getElementById('categoryChips'); catBox.innerHTML = '';
+            ALL_CATEGORIES.forEach(c => makeChip(catBox, c, 'categories'));
+
+            const genBox = document.getElementById('genderChips'); genBox.innerHTML = '';
+            ALL_GENDERS.forEach(g => makeChip(genBox, g, 'genders'));
+
+            const ageBox = document.getElementById('ageChips'); ageBox.innerHTML = '';
+            ALL_AGES.forEach(a => makeChip(ageBox, a, 'ages'));
+
+            renderTagChips();
+            renderSourceChips();
+            renderActiveChipRow();
+            updateFilterBadge();
+        }
+
+        function renderTagChips() {
+            const tagBox = document.getElementById('tagChips'); tagBox.innerHTML = '';
+            const query = document.getElementById('tagSearch').value.trim().toLowerCase();
+            let list = ALL_TAGS;
+            if (query) {
+                list = ALL_TAGS.filter(t => t.toLowerCase().includes(query));
+            } else {
+                // always include already-active tags even if outside the top N
+                const top = ALL_TAGS.slice(0, TOP_TAG_CHIP_COUNT);
+                const active = ALL_TAGS.filter(t => state.tags.has(t) && !top.includes(t));
+                list = [...top, ...active];
+            }
+            list.forEach(t => makeChip(tagBox, t, 'tags', window._tagCount[t]));
+        }
+
+        function renderSourceChips() {
+            const srcBox = document.getElementById('sourceChips'); srcBox.innerHTML = '';
+            const query = document.getElementById('sourceSearch').value.trim().toLowerCase();
+            let list = ALL_SOURCES;
+            if (query) {
+                list = ALL_SOURCES.filter(s => s.toLowerCase().includes(query));
+            } else {
+                const top = ALL_SOURCES.slice(0, TOP_SOURCE_CHIP_COUNT);
+                const active = ALL_SOURCES.filter(s => state.sources.has(s) && !top.includes(s));
+                list = [...top, ...active];
+            }
+            list.forEach(s => makeChip(srcBox, s, 'sources', window._srcCount[s]));
+        }
+
+        function renderActiveChipRow() {
+            activeChipRow.innerHTML = '';
+            const groups = ['categories', 'genders', 'ages', 'tags', 'sources'];
+            groups.forEach(g => {
+                state[g].forEach(val => {
+                    const chip = document.createElement('div');
+                    chip.className = 'active-chip';
+                    chip.innerHTML = `<span>${val}</span><span class="x">✕</span>`;
+                    chip.querySelector('.x').onclick = () => {
+                        state[g].delete(val);
+                        renderFilterChips();
+                        applyFilters();
+                    };
+                    activeChipRow.appendChild(chip);
+                });
+            });
+        }
+
+        function updateFilterBadge() {
+            const total = state.categories.size + state.genders.size + state.ages.size + state.tags.size + state.sources.size;
+            filterCountBadge.style.display = total > 0 ? 'flex' : 'none';
+            filterCountBadge.textContent = total;
+            filterToggleBtn.classList.toggle('has-active', total > 0);
+        }
+
+        function categoryColor(cat) {
+            return CATEGORY_COLORS[cat] || 'var(--cat-other)';
+        }
+
+        function renderGrid(data) {
+            grid.innerHTML = '';
+            resultCount.textContent = `Showing ${data.length} of ${MASTER_SOUNDS.length} sounds`;
+            if (data.length === 0) {
+                grid.innerHTML = '<div class="empty-state">No sounds match your search/filters. Try clearing a filter.</div>';
+                return;
+            }
+            const fragment = document.createDocumentFragment();
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'sound-card';
+                card.style.borderLeftColor = categoryColor(item.category);
+                card.onclick = () => insertAtCursor(item.text);
+
+                const tagsHtml = item.tags.slice(0, 3).map(t => `<span class="sound-tag-pill">${t}</span>`).join('');
+
+                card.innerHTML = `
+                    <div class="sound-text">${item.text}</div>
+                    <div class="sound-meta">${item.category || ''}</div>
+                    <div class="sound-tags">${tagsHtml}</div>
+                `;
+                fragment.appendChild(card);
+            });
+            grid.appendChild(fragment);
+        }
+
+        function applyFilters() {
+            const query = state.search;
+            const filtered = MASTER_SOUNDS.filter(item => {
+                if (query) {
+                    const haystack = [item.text, item.fullText, item.category, item.source, item.tags.join(' ')].join(' ').toLowerCase();
+                    if (!haystack.includes(query)) return false;
+                }
+                if (state.categories.size && !state.categories.has(item.category)) return false;
+                if (state.genders.size && !state.genders.has(item.gender)) return false;
+                if (state.ages.size && !state.ages.has(item.age)) return false;
+                if (state.tags.size) {
+                    const has = [...state.tags].some(t => item.tags.includes(t));
+                    if (!has) return false;
+                }
+                if (state.sources.size) {
+                    const itemSources = item.source.split(',').map(s => s.trim());
+                    const has = [...state.sources].some(s => itemSources.includes(s));
+                    if (!has) return false;
+                }
+                return true;
+            });
+            renderGrid(filtered);
+        }
+
+        // Insert text at cursor position in the input box
         function insertAtCursor(text) {
             const input = customInput;
             const start = input.selectionStart;
             const end = input.selectionEnd;
             const val = input.value;
-            
-            // Insert the sound text with a trailing space for convenience
             input.value = val.substring(0, start) + text + " " + val.substring(end);
-            
-            // Move cursor to end of the newly inserted text
             input.focus();
             const newPos = start + text.length + 1;
             input.setSelectionRange(newPos, newPos);
         }
 
-        function renderGrid(data) {
-            grid.innerHTML = '';
-            data.forEach(item => {
-                const phrase = item['Text to Paste'];
-                const card = document.createElement('div');
-                card.className = 'sound-card';
-                card.onclick = () => insertAtCursor(phrase);
-                
-                card.innerHTML = `
-                    <div class="sound-text">${phrase}</div>
-                    <div class="sound-meta">${item['Category'] || ''}</div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // 3. Search and filter logic
+        // ---- Event wiring ----
         searchBar.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            const filtered = MASTER_SOUNDS.filter(item => {
-                return (item['Text to Paste'] || '').toLowerCase().includes(query) || 
-                       (item['Vibe / Keywords'] || '').toLowerCase().includes(query) || 
-                       (item['Category'] || '').toLowerCase().includes(query);
-            });
-            renderGrid(filtered);
+            state.search = e.target.value.toLowerCase().trim();
+            applyFilters();
         });
 
-        // 4. Final copy button
+        filterToggleBtn.addEventListener('click', () => {
+            filterPanel.classList.toggle('open');
+        });
+
+        document.getElementById('tagSearch').addEventListener('input', renderTagChips);
+        document.getElementById('sourceSearch').addEventListener('input', renderSourceChips);
+
+        document.getElementById('clearFiltersBtn').addEventListener('click', () => {
+            state.categories.clear(); state.genders.clear(); state.ages.clear(); state.tags.clear(); state.sources.clear();
+            document.getElementById('tagSearch').value = '';
+            document.getElementById('sourceSearch').value = '';
+            renderFilterChips();
+            applyFilters();
+        });
+
+        document.getElementById('clearInputBtn').addEventListener('click', () => {
+            customInput.value = '';
+            customInput.focus();
+        });
+
         document.getElementById('copyAllBtn').onclick = () => {
             if (customInput.value) {
                 navigator.clipboard.writeText(customInput.value.trim());
