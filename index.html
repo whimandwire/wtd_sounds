@@ -96,6 +96,31 @@
             position: absolute; top: 6px; right: 8px; font-size: 0.7rem; opacity: 0.85;
         }
         .sound-card { position: relative; }
+        .preview-btn {
+            position: absolute; top: 4px; left: 4px; width: 22px; height: 22px; border-radius: 50%;
+            background-color: rgba(255,71,87,0.15); border: 1px solid var(--accent-color); color: var(--accent-color);
+            font-size: 0.65rem; display: flex; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .preview-btn.playing { background-color: var(--accent-color); color: #fff; }
+
+        .footer-controls-row {
+            display: flex; align-items: center; gap: 8px; padding-bottom: 8px; flex-wrap: wrap;
+        }
+        .voice-toggle { display: flex; gap: 4px; align-items: center; }
+        .voice-toggle-label { font-size: 0.68rem; color: var(--muted-text); text-transform: uppercase; letter-spacing: 0.5px; }
+        .voice-btn {
+            padding: 4px 10px; border-radius: 999px; background-color: var(--chip-bg); border: 1px solid #333;
+            color: var(--text-color); font-size: 0.75rem; cursor: pointer;
+        }
+        .voice-btn.active { background-color: var(--accent-color); border-color: var(--accent-color); color: #fff; font-weight: 600; }
+        .preview-msg-btn {
+            background-color: #5352ed; color: #fff; border: none; padding: 6px 14px; border-radius: 8px;
+            font-weight: bold; font-size: 0.78rem; cursor: pointer;
+        }
+        .preview-msg-btn.playing { background-color: #3742fa; }
+        .setup-note {
+            font-size: 0.68rem; color: var(--muted-text); padding: 0 0 6px 0;
+        }
 
         .empty-state { text-align: center; color: var(--muted-text); padding: 40px 10px; font-size: 0.9rem; }
 
@@ -157,9 +182,22 @@
     <div class="sound-grid" id="soundGrid"></div>
 
     <div class="footer-bar">
-        <input type="text" id="customInput" class="custom-input" placeholder="Your final text..." autocomplete="off">
-        <button class="clear-btn" id="clearInputBtn" title="Clear text box">✕</button>
-        <button class="copy-btn" id="copyAllBtn">Copy</button>
+        <div style="width:100%;">
+            <div class="footer-controls-row">
+                <div class="voice-toggle">
+                    <span class="voice-toggle-label">TTS Voice</span>
+                    <button class="voice-btn active" id="voiceMaleBtn">Male</button>
+                    <button class="voice-btn" id="voiceFemaleBtn">Female</button>
+                </div>
+                <button class="preview-msg-btn" id="previewMsgBtn">▶ Preview message</button>
+            </div>
+            <div class="setup-note">Preview needs this file saved inside your CustomSfx folder (next to sound_files.json and the .wav files). Unmatched (…) tags are spoken as TTS instead.</div>
+            <div class="search-row">
+                <input type="text" id="customInput" class="custom-input" placeholder="Your final text..." autocomplete="off">
+                <button class="clear-btn" id="clearInputBtn" title="Clear text box">✕</button>
+                <button class="copy-btn" id="copyAllBtn">Copy</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -180,6 +218,98 @@
 
         let MASTER_SOUNDS = [];
         let ALL_CATEGORIES = [], ALL_GENDERS = [], ALL_AGES = [], ALL_TAGS = [], ALL_SOURCES = [], ALL_CHARACTERS = [];
+        let SOUND_FILES = {};          // "text without parens" -> [filenames], loaded from sound_files.json
+        let SOUND_LOOKUP_BY_TEXT = {}; // "(full text)" lowercased -> MASTER_SOUNDS item, for message-preview parsing
+        let TTS_VOICE_GENDER = "male"; // "male" | "female"
+        let SELECTED_VOICES = { male: null, female: null };
+        let currentAudio = null;
+
+        // ---- Audio playback (local CustomSfx folder must sit next to this HTML file) ----
+        function loadSoundManifest() {
+            fetch('./sound_files.json')
+                .then(r => r.ok ? r.json() : {})
+                .then(data => {
+                    SOUND_FILES = data || {};
+                    if (MASTER_SOUNDS.length) applyFilters(); // re-render so preview buttons show up if this loaded after the sheet
+                })
+                .catch(() => { SOUND_FILES = {}; });
+        }
+
+        function stopCurrentAudio() {
+            if (currentAudio) { try { currentAudio.pause(); } catch (e) {} currentAudio = null; }
+            window.speechSynthesis.cancel();
+        }
+
+        function playSoundText(text) {
+            return new Promise((resolve) => {
+                const inner = (text || '').trim().replace(/^\(/, '').replace(/\)$/, '');
+                const files = SOUND_FILES[inner];
+                if (!files || !files.length) { resolve(false); return; }
+                const pick = files[Math.floor(Math.random() * files.length)];
+                const audio = new Audio('./' + encodeURIComponent(pick));
+                currentAudio = audio;
+                audio.onended = () => resolve(true);
+                audio.onerror = () => resolve(false);
+                audio.play().catch(() => resolve(false));
+            });
+        }
+
+        // ---- Text-to-speech (mimics the game's Male/Female TTS voices) ----
+        function pickVoices() {
+            const voices = window.speechSynthesis.getVoices();
+            if (!voices.length) return;
+            const isEnglish = v => /^en/i.test(v.lang);
+            const nameHas = (v, words) => words.some(w => v.name.toLowerCase().includes(w));
+            const maleWords = ["male", "david", "alex", "daniel", "fred", "guy", "mark", "tom"];
+            const femaleWords = ["female", "samantha", "victoria", "zira", "susan", "karen", "moira", "tessa", "fiona", "allison", "ava"];
+            const pool = voices.filter(isEnglish).length ? voices.filter(isEnglish) : voices;
+            SELECTED_VOICES.male = pool.find(v => nameHas(v, maleWords)) || pool[0] || null;
+            SELECTED_VOICES.female = pool.find(v => nameHas(v, femaleWords)) || pool[1] || pool[0] || null;
+        }
+        if ('speechSynthesis' in window) {
+            pickVoices();
+            window.speechSynthesis.onvoiceschanged = pickVoices;
+        }
+
+        function speakText(text) {
+            return new Promise((resolve) => {
+                if (!text || !text.trim() || !('speechSynthesis' in window)) { resolve(); return; }
+                const utter = new SpeechSynthesisUtterance(text);
+                const v = SELECTED_VOICES[TTS_VOICE_GENDER];
+                if (v) utter.voice = v;
+                utter.onend = () => resolve();
+                utter.onerror = () => resolve();
+                window.speechSynthesis.speak(utter);
+            });
+        }
+
+        // Split the composed message into an ordered list of {type:'audio'|'tts', value}
+        function parseMessageIntoSegments(message) {
+            const segments = [];
+            const re = /\([^)]*\)/g;
+            let lastIndex = 0, m;
+            while ((m = re.exec(message)) !== null) {
+                if (m.index > lastIndex) segments.push({ type: 'tts', value: message.slice(lastIndex, m.index) });
+                const tag = m[0];
+                const known = SOUND_LOOKUP_BY_TEXT[tag.toLowerCase()];
+                segments.push(known ? { type: 'audio', value: tag } : { type: 'tts', value: tag });
+                lastIndex = re.lastIndex;
+            }
+            if (lastIndex < message.length) segments.push({ type: 'tts', value: message.slice(lastIndex) });
+            return segments.filter(s => s.value && s.value.trim());
+        }
+
+        async function previewMessage(message) {
+            stopCurrentAudio();
+            const segments = parseMessageIntoSegments(message);
+            for (const seg of segments) {
+                if (seg.type === 'audio') {
+                    await playSoundText(seg.value);
+                } else {
+                    await speakText(seg.value);
+                }
+            }
+        }
 
         const state = {
             search: "",
@@ -253,6 +383,11 @@
                             type: K.type ? (row[K.type] || '') : '',
                             hasVariations: K.variations ? /^y/i.test(row[K.variations] || '') : false
                         }));
+
+                    SOUND_LOOKUP_BY_TEXT = {};
+                    MASTER_SOUNDS.forEach(item => {
+                        if (item.text) SOUND_LOOKUP_BY_TEXT[item.text.trim().toLowerCase()] = item;
+                    });
 
                     buildFacets();
                     renderFilterChips();
@@ -409,13 +544,27 @@
 
                 const tagsHtml = item.tags.slice(0, 3).map(t => `<span class="sound-tag-pill">${t}</span>`).join('');
                 const varBadge = item.hasVariations ? '<span class="variations-badge" title="Plays a random variation each time">🎲</span>' : '';
+                const hasAudio = !!SOUND_FILES[item.text.trim().replace(/^\(/, '').replace(/\)$/, '')];
 
                 card.innerHTML = `
                     ${varBadge}
+                    ${hasAudio ? '<div class="preview-btn" title="Preview sound">▶</div>' : ''}
                     <div class="sound-text">${item.text}</div>
                     <div class="sound-meta">${item.category || ''}</div>
                     <div class="sound-tags">${tagsHtml}</div>
                 `;
+
+                if (hasAudio) {
+                    const btn = card.querySelector('.preview-btn');
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        stopCurrentAudio();
+                        document.querySelectorAll('.preview-btn.playing').forEach(b => b.classList.remove('playing'));
+                        btn.classList.add('playing');
+                        playSoundText(item.text).then(() => btn.classList.remove('playing'));
+                    });
+                }
+
                 fragment.appendChild(card);
             });
             grid.appendChild(fragment);
@@ -501,7 +650,41 @@
             }
         };
 
-        window.onload = loadSheetData;
+        const voiceMaleBtn = document.getElementById('voiceMaleBtn');
+        const voiceFemaleBtn = document.getElementById('voiceFemaleBtn');
+        voiceMaleBtn.addEventListener('click', () => {
+            TTS_VOICE_GENDER = 'male';
+            voiceMaleBtn.classList.add('active');
+            voiceFemaleBtn.classList.remove('active');
+        });
+        voiceFemaleBtn.addEventListener('click', () => {
+            TTS_VOICE_GENDER = 'female';
+            voiceFemaleBtn.classList.add('active');
+            voiceMaleBtn.classList.remove('active');
+        });
+
+        const previewMsgBtn = document.getElementById('previewMsgBtn');
+        previewMsgBtn.addEventListener('click', async () => {
+            const message = customInput.value;
+            if (!message || !message.trim()) return;
+            document.querySelectorAll('.preview-btn.playing').forEach(b => b.classList.remove('playing'));
+            previewMsgBtn.classList.add('playing');
+            previewMsgBtn.disabled = true;
+            const label = previewMsgBtn.textContent;
+            previewMsgBtn.textContent = '■ Stop';
+            try {
+                await previewMessage(message);
+            } finally {
+                previewMsgBtn.classList.remove('playing');
+                previewMsgBtn.disabled = false;
+                previewMsgBtn.textContent = label;
+            }
+        });
+
+        window.onload = () => {
+            loadSheetData();
+            loadSoundManifest();
+        };
     </script>
 </body>
 </html>
